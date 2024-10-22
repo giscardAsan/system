@@ -1,0 +1,12 @@
+body{
+    background-color: rgb(218, 212, 212);
+    color: rgb(182, 152, 152);
+}
+
+*{
+    text-decoration: none;
+}
+
+.about{
+    background-color: aqua;
+}
