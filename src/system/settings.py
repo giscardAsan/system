@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'app',
     'django_use_email_as_username.apps.DjangoUseEmailAsUsernameConfig',
     'custom_user',
+    "verify_email",
 
 ]
 
@@ -110,6 +111,9 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 
+
+
+
 # Internationalization
 # https://docs.djangoproject.com/en/4.2/topics/i18n/
 
@@ -135,3 +139,21 @@ STATICFILES_DIRS = [
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'sandbox.smtp.mailtrap.io'
+EMAIL_HOST_USER = 'af7d5a25e4e115'
+EMAIL_HOST_PASSWORD = 'd7489eee548779'
+EMAIL_PORT = '2525'
+EMAIL_USE_TLS = True
+
+
+# EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+# EMAIL_HOST = 'smtp.mailgun.org'
+# EMAIL_HOST_USER = 'postmaster@sandboxb86dcb8491ec44599343818530811cd3.mailgun.org'
+# EMAIL_HOST_PASSWORD = '5132bca2e2b61bdff3db29b958c49a27-784975b6-0afcce43'
+# EMAIL_PORT = '587'
+# EMAIL_USE_TLS = True

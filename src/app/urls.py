@@ -17,6 +17,7 @@ urlpatterns = [
      path('', index, name="home"),
      path("register/",CustomRegisterView.as_view(),name="register"),
      path("logout/", LogoutView.as_view(next_page="login"), name="logout"),
+     
 
 
 ]
