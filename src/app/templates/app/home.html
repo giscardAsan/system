@@ -17,7 +17,7 @@
         position: fixed;
         z-index: 99;
         box-shadow: 0 0 10px #000;
-        background:;
+        background-color: red;
         }
 
         
@@ -30,11 +30,13 @@
          {% endif %}
         </div>
          
-         <div>
+         
          {% if request.user.is_authenticated %}
+         <div>
          <input class="log" type="submit" value="Login">
+        </div>
+
          {% else %}
-         </div>
      
          <div>
             <a href="{% url 'logout' %}">Logout</a>
