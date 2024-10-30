@@ -30,8 +30,13 @@ def index(request):
     context = {"key": "I am at Home "}
     return render(request, "app/home.html", context)
 
+def register_user(request):
+    ...
+    
+    if form.is_valid():
 
-
+        inactive_user = send_verification_email(request, form)
+        inactive_user.cleaned_data['email']
 
         # Output: test-user123@gmail.com
 
