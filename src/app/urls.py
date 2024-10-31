@@ -10,8 +10,6 @@ from django.views.generic.base import RedirectView
 
 
 
-
-
 urlpatterns = [
 
      path("login/",CustomLoginView.as_view(),name="login"),
