@@ -5,18 +5,181 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>login</title>
 </head>
-<body>
-    <h1> Login Page </h1>
+<body style=" background-color: blue;">
+<div>
+    <a href="{% url 'request-new-link-from-email' %}">Get a new verification link</a>
+</div>
+
+    {% comment %} <body style="background-image: url('{% static 'imagefolder/images/rawuf.png' %}');"> {% endcomment %}
+  
+    <style>
+     
+    .popo{
+    display: flex;
+    background-image: url(rawuf.png);
+    background-size: cover;
+    height: 60vh;
+    justify-content: center;
+    align-items: center;
+    background-position: center;
+    background-size: cover;
+    }
+    
+    section{
+    position: relative;
+    max-width: 500px;
+    background-color: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    border-radius: 20px;
+    backdrop-filter: blur(55px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 3rem;
+    transition: all 0.5s ease-in-out;
+    }
+    
+    h1{
+    font-size: 2rem;
+    color: white;
+    text-align: center;
+    }
+    
+    .inputbox{
+    position: relative;
+    margin: 20px 0;
+    max-width: 550px;
+    border-bottom: 2px solid #fff;
+    transition: all 0.5s ease-in-out;
+    }
+    
+    .inputbox input{
+    width: 100%;
+    height: 40px;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 1rem;
+    padding: 0 35px 0 5px;
+    color: #fff
+    }
+    
+    .inputbox img{
+    position: absolute;
+    right: 8px;
+    color: #fff;
+    font-size: 1.2rem;
+    top: 12px;
+    transition: all 0.5s ease-in-out;
+    }
+    
+    .inputbox label{
+    position: absolute;
+    left: 5px;
+    transform: translateY(-50%);
+    color: #fff;
+    font-size: 1rem;
+    pointer-events: none;
+    transition: all 0.5s ease-in-out;
+    }
+    
+    .input:focus ~ label, 
+    input:valid ~ label{
+    top: -5px;
+    font-size: 0.9rem;
+    color: #a8a8a8;
+    }
+    
+    .button{
+    width: 100%;
+    height: 40px;
+    border-radius: 40px;
+    background-color: rgba(255, 255, 255, 1);
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: all 0.4s ease;
+    }
+    
+    button:hover{
+    background-color: rgba(255, 255, 255, 0.5);
+    }
+    
+    .register{
+    font-size: 0.9rem;
+    color: #fff;
+    text-align: center;
+    margin: 25px 0 10px;
+    transition: all 0.5s ease-in-out;
+    }
+    
+    .register p a{
+    text-decoration: none;
+    color: #fff;
+    transition: all 0.5s ease-in-out;
+    background: transparent;
+    }
+    
+    .register p a:hover{
+    text-decoration: underline;
+    color: #a8a8a8;
+    }
+    
+    .recover{
+    text-align: right;
+    font-size: 1rem;
+    }
+    
+    .recover a{
+    text-decoration: none;
+    color: rgb(125, 125, 235);
+    }
+    
+    .recover a:hover{
+    color: blue;
+    text-decoration: underline;
+    }
+    </style>
+    <br>
+        <br>
+        <br>
+        <br>
+        <br> 
+      <h1>User Login</h1>
+      <nav class="popo">
+        <section>
+      <form method="post">
+        {% csrf_token %}
+        <div class="inputbox">
+          <img width="20px" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAAsTAAALEwEAmpwYAAAA7ElEQVR4nO3UPUpDQRQF4I9gp4h1/MEtqGQPBu3sLd2CqxAFCxdhQBFchegWlJdE6xSpDESEEYbnjC+8RLF4B25zf86ZOXcYGvwnHGCA6ZzRRzcl0F8A+TREkRL4Kq7O4cJyxPMNo1AY4qgG+SFeAsc41dDGdXSCO2zNQLyOXjR3j+2qZT9HJznFUqKvhZPo5q84/on4CmuRl2d4D8OP2It6d/EQahNcRrtbwXlK4LP5rZTbKRFdhOFJyD2hU5opckvObb9VsqLKuuwryhYCNnCDW2zKo7bArGgE6lv0659dd0EiBfarL9rgr/ABCyOWRsKdmrwAAAAASUVORK5CYII=">
+          <label for="">EMAIL</label>
+          <input type="text" name="username" autofocus="" autocapitalize="none" autocomplete="username" required="" id="username">
+        </div>
+     
+      <div class="inputbox">
+          <img width="20px" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAq0lEQVR4nO2VSwrCMBRFz1yd2f2oK9DliBPtkuw+6lL8TsuTwC10ohFMLMF34EIgl7ybPzgFUgE10AIPKbQPwDx38Q1wBeyFLsA6Z/FOhY7AAphIS6BRX5cjRDWY+faNbyfPOfV21IOZx+hXYp8ywEmDhmWPsZI3HMxk3DXo9APvTN5bygAm5fJH+c8AlljlBvgWD2C+BfghxK8h/hBZ0U+xjf0Z2VgBHH7BE3P8sK9A6eX0AAAAAElFTkSuQmCC">
+          <input type="password" name="password" id="pass" >
+          <label style="color: #fff;" for="">PASSWORD</label>
+      </div>
+      <p class="recover">
+        <labe>Remrmber</label><input type="checkbox" name="checkbox" value="check">Me
+      </p>
+      <br>
+      <input class="button" type="submit" value="LOGIN">
+      <div class="register">
+        <P>Dont  have an account? <a href="{% url 'register' %}">Register</a></P>
+      </div>
+      </form>
+      <br>
+      <br>
+      <br>
+    </section>
+    </nav>
+    
 
 
-<form method="post"  >
-	{% csrf_token %}
-	{{form.as_p}}
-    <div><labe>Remrmber</label><input type="checkbox" name="checkbox" value="check">Me</div>
-	<input type="submit" value="Login">
-</form>
-<P>Dont  have an account? <a href="{% url 'register' %}">Register</a></P>
-<a href="{% url 'request-new-link-from-email' %}">Get a new verification link</a>
 
 
 

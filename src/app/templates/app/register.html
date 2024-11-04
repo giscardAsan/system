@@ -5,16 +5,181 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-<body>
-    <h1> Register Page</h1>
+<body style=" background-color: blue;">
 
-<form method="post" style="width:10%" align ="center">
-	{% csrf_token %}
-	{{form.as_p}}
-	<input type="submit" value="Register">
-</form>
+    <style>
+        .popo{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-position: center;
+            background-size: cover;
+        }
+      
+        section{
+            position: relative;
+            max-width: 500px;
+            background-color: transparent;
+            border: 2px solid rgba(255, 255, 255, 0.5);
+            border-radius: 20px;
+            backdrop-filter: blur(55px);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem 3rem;
+            transition: all 0.5s ease-in-out;
+        }
+      
+        h1{
+            font-size: 2rem;
+            color: white;
+            text-align: center;
+        }
+      
+        .inputbox{
+            position: relative;
+            margin: 20px 0;
+            max-width: 550px;
+            border-bottom: 2px solid #fff;
+            transition: all 0.5s ease-in-out;
+        }
+      
+        .inputbox input{
+            width: 100%;
+            height: 40px;
+            background: transparent;
+            border: none;
+            outline: none;
+            font-size: 1rem;
+            padding: 0 35px 0 5px;
+            color: #fff
+        }
+      
+        .inputbox img{
+            position: absolute;
+            right: 8px;
+            color: #fff;
+            font-size: 1.2rem;
+            top: 12px;
+            transition: all 0.5s ease-in-out;
+        }
+      
+        .inputbox label{
+            position: absolute;
+            left: 5px;
+            transform: translateY(-50%);
+            color: #fff;
+            font-size: 1rem;
+            pointer-events: none;
+            transition: all 0.5s ease-in-out;
+        }
+      
+        .input:focus ~ label, 
+        input:valid ~ label{
+            top: -5px;
+            font-size: 0.9rem;
+            color: #a8a8a8;
+        }
+      
+        .button{
+            width: 100%;
+            height: 40px;
+            border-radius: 40px;
+            background-color: rgba(255, 255, 255, 1);
+            border: none;
+            outline: none;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 600;
+            transition: all 0.4s ease;
+        }
+      
+        button:hover{
+            background-color: rgba(255, 255, 255, 0.5);
+        }
+      
+        .register{
+            font-size: 0.9rem;
+            color: #fff;
+            text-align: center;
+            margin: 25px 0 10px;
+            transition: all 0.5s ease-in-out;
+        }
+      
+        .register p a{
+            text-decoration: none;
+            color: #fff;
+            transition: all 0.5s ease-in-out;
+        }
+      
+        .register p a:hover{
+            text-decoration: underline;
+            color: #a8a8a8;
+        }
+      </style>
+      
+      {% comment %} <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const signupForm = document.querySelector('section');
+            signupForm.style.opacity = 0;
+      
+            setTimeout(() => {
+                signupForm.style.transition = 'opacity 1s ease-in-out';
+                signupForm.style.opacity = 1;
+            }, 500);
+        });
+      </script> {% endcomment %}
 
-<P>Already have an account? <a href="{% url 'login'%}">Login</a></P>
+
+
+
+
+
+      <h1>Register</h1>
+      <br>
+      <nav class="popo">
+        <section>
+       
+          <form method="post">
+                {% csrf_token %}
+                <div class="inputbox">
+                    <img width="20px" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAACyUlEQVR4nO2ZS2xNQRjHf9JKpK1HvEOkEiUW9boogliVJYnYCvFKY2NHCLEjSKkNEUSIjTYsrDwW4pWIepUiHiUV0g1KUFFUvuR/k9n03nOOe+9Mub9kkpN7vv/M/5w7Z+abGSjy75ECDgAPgU8qdr0fmEHADAGOA7+Bnl6K3TsGDCYwRgH3ZPIbUA/UAINUavQPdCnmLjCSQOgP3JCxVmBChtgq4LFirwOlBMAOGWoDhkeIt5hX0mzFM9aXO2VmQQzdQmk+qIt5Y4OMXEigvSTtOjxyTiZWJdCukbYJj7yUCfs44zJJ2hd45ItMlCXQlktrdXh/ADMTlwppP+ORPt+FzsrE6gTatdI24pH1MnExgfaytPYg3rBJ6KOM2OQUlUXSvAcG4pltMmPpwYgI8RbzWpotBECpErMeJWoTs3y4TxR7DSghECw1viNjXVrQzFGuZGUu0AB8V0xzxH+r4N/D0SwLml/AkRD6fSama/HS4iwpW7TImZZRWeQ/pgSYCWxSemxr3nbgq0q7fmtSTCqUEWgMsBl4k+HD7a10ALuBSh/GRwMngZ+OoWcahVbqDY9Tml2m65TuWcxzR9cNnCjULkU/YKOTPti4fgqYl6Cu+cBpZ26w9XGd2sgLA9Rg+s2dB8bnoN6xwBmn3saEC6Ssfb3ZeVNLc90AsEx1Wxu31E1zNsM+cBYfk8kfVcBTtfVI25V/veuWztttNh1K/hkm8+ntGvOQmHpV9FYjSaGoBN6p7b1JK5mlYfKHrgvNbA2x3Um25Uuc9HgX/tgjD7fjztwrnA3bnA9pMSh3NoKXxxFelcj2Pn1TJy9XogqmStCpzSffVDg74FOiCPYp+CDh0CBP5i0rNxVcSzjUypOdBEV+gMWEwxLnWCorOxVsh3bV+KcauC9P26PmPumDuJBKa5zjKMtHDmvV5Nt4B3CoQHlYkSL0Nf4AU7gii/wb2wwAAAAASUVORK5CYII=">
+                    <label for="">FIRST_NAME</label>
+                    <input type="text" name="first_name" id="id_first_name">   
+                </div>
+                <div class="inputbox">
+                    <img width="20px" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAACyUlEQVR4nO2ZS2xNQRjHf9JKpK1HvEOkEiUW9boogliVJYnYCvFKY2NHCLEjSKkNEUSIjTYsrDwW4pWIepUiHiUV0g1KUFFUvuR/k9n03nOOe+9Mub9kkpN7vv/M/5w7Z+abGSjy75ECDgAPgU8qdr0fmEHADAGOA7+Bnl6K3TsGDCYwRgH3ZPIbUA/UAINUavQPdCnmLjCSQOgP3JCxVmBChtgq4LFirwOlBMAOGWoDhkeIt5hX0mzFM9aXO2VmQQzdQmk+qIt5Y4OMXEigvSTtOjxyTiZWJdCukbYJj7yUCfs44zJJ2hd45ItMlCXQlktrdXh/ADMTlwppP+ORPt+FzsrE6gTatdI24pH1MnExgfaytPYg3rBJ6KOM2OQUlUXSvAcG4pltMmPpwYgI8RbzWpotBECpErMeJWoTs3y4TxR7DSghECw1viNjXVrQzFGuZGUu0AB8V0xzxH+r4N/D0SwLml/AkRD6fSama/HS4iwpW7TImZZRWeQ/pgSYCWxSemxr3nbgq0q7fmtSTCqUEWgMsBl4k+HD7a10ALuBSh/GRwMngZ+OoWcahVbqDY9Tml2m65TuWcxzR9cNnCjULkU/YKOTPti4fgqYl6Cu+cBpZ26w9XGd2sgLA9Rg+s2dB8bnoN6xwBmn3saEC6Ssfb3ZeVNLc90AsEx1Wxu31E1zNsM+cBYfk8kfVcBTtfVI25V/veuWztttNh1K/hkm8+ntGvOQmHpV9FYjSaGoBN6p7b1JK5mlYfKHrgvNbA2x3Um25Uuc9HgX/tgjD7fjztwrnA3bnA9pMSh3NoKXxxFelcj2Pn1TJy9XogqmStCpzSffVDg74FOiCPYp+CDh0CBP5i0rNxVcSzjUypOdBEV+gMWEwxLnWCorOxVsh3bV+KcauC9P26PmPumDuJBKa5zjKMtHDmvV5Nt4B3CoQHlYkSL0Nf4AU7gii/wb2wwAAAAASUVORK5CYII=">
+                    <label for="">LAST_NAME</label>
+                    <input type="text" name="last_name" id="id_last_name">
+                </div>
+
+                <div class="inputbox">
+                    <img width="20px" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAAsTAAALEwEAmpwYAAAA7ElEQVR4nO3UPUpDQRQF4I9gp4h1/MEtqGQPBu3sLd2CqxAFCxdhQBFchegWlJdE6xSpDESEEYbnjC+8RLF4B25zf86ZOXcYGvwnHGCA6ZzRRzcl0F8A+TREkRL4Kq7O4cJyxPMNo1AY4qgG+SFeAsc41dDGdXSCO2zNQLyOXjR3j+2qZT9HJznFUqKvhZPo5q84/on4CmuRl2d4D8OP2It6d/EQahNcRrtbwXlK4LP5rZTbKRFdhOFJyD2hU5opckvObb9VsqLKuuwryhYCNnCDW2zKo7bArGgE6lv0659dd0EiBfarL9rgr/ABCyOWRsKdmrwAAAAASUVORK5CYII=">
+                    <label for="">EMAIL_ADDRESS:</label>
+                    <input type="email" name="email" required id="id_email">
+                  </div>
+
+                <div class="inputbox">
+                  <img width="20px" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAq0lEQVR4nO2VSwrCMBRFz1yd2f2oK9DliBPtkuw+6lL8TsuTwC10ohFMLMF34EIgl7ybPzgFUgE10AIPKbQPwDx38Q1wBeyFLsA6Z/FOhY7AAphIS6BRX5cjRDWY+faNbyfPOfV21IOZx+hXYp8ywEmDhmWPsZI3HMxk3DXo9APvTN5bygAm5fJH+c8AlljlBvgWD2C+BfghxK8h/hBZ0U+xjf0Z2VgBHH7BE3P8sK9A6eX0AAAAAElFTkSuQmCC">
+                  <label for="">PASSWORD</label>
+                    <input type="password" name="password1" autocomplete="new-password" required id="id_password1">
+                    
+                </div>
+                <div class="inputbox">
+                    <img width="20px" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAq0lEQVR4nO2VSwrCMBRFz1yd2f2oK9DliBPtkuw+6lL8TsuTwC10ohFMLMF34EIgl7ybPzgFUgE10AIPKbQPwDx38Q1wBeyFLsA6Z/FOhY7AAphIS6BRX5cjRDWY+faNbyfPOfV21IOZx+hXYp8ywEmDhmWPsZI3HMxk3DXo9APvTN5bygAm5fJH+c8AlljlBvgWD2C+BfghxK8h/hBZ0U+xjf0Z2VgBHH7BE3P8sK9A6eX0AAAAAElFTkSuQmCC">
+                    <label for="">CONFIRM_PASSWORD</label>
+                    <input type="password" name="password2" autocomplete="new-password" required id="id_password2">
+                </div>
+                <input class="button" type="submit" value="REGISTER">
+                <div class="register">
+                    <P>Already have an account? <a href="{% url 'login'%}">Login</a></P>
+                </div>
+                
+            </form>
+           
+        </section>
+        
+      </nav>
 
 </body>
 </html>

@@ -30,13 +30,12 @@ def index(request):
     context = {"key": "I am at Home "}
     return render(request, "app/home.html", context)
 
-def register_user(request):
-    ...
-    
-    if form.is_valid():
+# def register_user(request):
+#     ...
+#     if form.is_valid():
 
-        inactive_user = send_verification_email(request, form)
-        inactive_user.cleaned_data['email']
+#         inactive_user = send_verification_email(request, form)
+#         inactive_user.cleaned_data['email']
 
         # Output: test-user123@gmail.com
 
@@ -75,7 +74,7 @@ class CustomRegisterView(FormView):
     template_name = "app/register.html"
     form_class = UserCreationForm
     redirect_app_user = True
-    success_url = reverse_lazy("login") # Automatically redirect to homepage after Registration
+    success_url = reverse_lazy("home") # Automatically redirect to homepage after Registration
 
     def form_valid(self, form):
         # user = form.save()  # Automatically Save Registering User
