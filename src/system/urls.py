@@ -28,5 +28,6 @@ urlpatterns = [
     path("", include("app.urls")),
     path('verification/', include('verify_email.urls')),
     path('',include('django.contrib.auth.urls')),
+    path("", include("product.urls")),
     
 ]

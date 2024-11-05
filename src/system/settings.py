@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'django_use_email_as_username.apps.DjangoUseEmailAsUsernameConfig',
     'custom_user',
     "verify_email",
+    'product',
 
 ]
 
