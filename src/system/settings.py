@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'custom_user',
     "verify_email",
     'product',
+    'cart',
 
 ]
 
