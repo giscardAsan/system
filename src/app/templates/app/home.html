@@ -41,6 +41,12 @@
          <div>
             <a href="{% url 'logout' %}">Logout</a>
          </div>
+         <a href="">
+            {% if request.user.is_authenticated %}
+            <P>Dont  have an account? <a href="{% url 'password_change' %}">password_change</a></P>
+            {% endif %}
+         </a>
+         
          {% endif %}
         
         </header>
