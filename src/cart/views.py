@@ -1,24 +1,26 @@
 from django.http import HttpResponseRedirect
 from django.shortcuts import render, redirect
 from product.models import Product
-from .models import cart
+from .models import Cart
 # Create your views here.
 
 
 
+def list(request):
+    return render(request, 'cart/list.html')
 def Add_Cart(request, product_id):
     if request.user.is_authenticated:
         # Using  product_id to get the exact product
         product = Product.objects.get(id=product_id)
 
         # Create a new cart in the cart Table
-        Added_cart, done = cart.objects.get_or_create(product=product, user=request.user)
+        Added_cart, done = Cart.objects.get_or_create(product=product, user=request.user)
         Added_cart.quantity = 1
         Added_cart.save()
 
         # Retrieve The number of cart related to a particular user
 
-        Added_cart = cart.objects.filter(user=request.user).count()
+        Added_cart = Cart.objects.filter(user=request.user).count()
 
         # Save cart Count to a session
         request.session['cart'] = Added_cart
@@ -28,12 +30,12 @@ def Add_Cart(request, product_id):
     else:
 
         return HttpResponseRedirect(request.META.get("HTTP_REFERER"))
-    
-    
-def Show_cart(request):
+
+
+def Show_Cart(request):
     if request.user.is_authenticated:
 
-        cart = cart.objects.filter(user=request.user)
+        cart = Cart.objects.filter(user=request.user)
 
         # MyQuantityRange = ""
 
@@ -59,7 +61,7 @@ def Update_Cart(request, product_id):
         product = Product.objects.get(id=product_id)
 
         # Create a new cart in the cart Table
-        Added_cart, done = cart.objects.get_or_create(product=product, user=request.user)
+        Added_cart, done = Cart.objects.get_or_create(product=product, user=request.user)
 
         if int(request.POST['quantity']) <= 0 or product.quantity < (int(request.POST['quantity'])):
             Added_cart.quantity = 1
@@ -70,7 +72,7 @@ def Update_Cart(request, product_id):
 
         # Retrieve The number of cart related to a particular user
 
-        Added_cart = cart.objects.filter(user=request.user).count()
+        Added_cart = Cart.objects.filter(user=request.user).count()
 
         # Save cart Count to a session
         request.session['cart'] = Added_cart
@@ -85,10 +87,10 @@ def Update_Cart(request, product_id):
 def Delete_Cart(request, product_id):
     if request.user.is_authenticated:
         product = Product.objects.get(id=product_id)
-        cart = cart.objects.filter(product=product)
+        cart = Cart.objects.filter(product=product)
         cart.delete()
         # Retrieve The number of cart related to a particular user
-        Added_cart = cart.objects.filter(user=request.user).count()
+        Added_cart = Cart.objects.filter(user=request.user).count()
 
         # Save cart Count to a session
         request.session['cart'] = Added_cart
@@ -96,4 +98,3 @@ def Delete_Cart(request, product_id):
         return HttpResponseRedirect(request.META.get("HTTP_REFERER"))
     else:
         return HttpResponseRedirect(request.META.get("HTTP_REFERER"))
-

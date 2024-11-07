@@ -1,10 +1,11 @@
-from custom_user.models import User
 from django.db import models
+from custom_user.models import User
 from django.http import request
 from product.models import Product
+# Create your models here.
 
 
-class cart(models.Model):
+class Cart(models.Model):
     product = models.ForeignKey(Product, on_delete=models.CASCADE)
     quantity = models.IntegerField(default=0)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
@@ -16,7 +17,7 @@ class cart(models.Model):
     def Total_cost(self):
         return self.quantity * self.product.price
 
-    def Twelve(self):  
+    def Twelve(self):
 
         if request.POST['mode'] <= 12:
             return request.POST['mode']
