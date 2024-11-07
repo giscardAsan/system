@@ -258,11 +258,17 @@
         <div class="cart-product-title">{{cart.product.name}}</div>
     <p class="discount"><b><del>$450</del></b></p>
         <div class="cart-price">${{cart.Total_cost }}</div>
-        <input type="number" value="{{ cart.quantity}}1" class="cart-quantity">
+        <form action="/Update_Cart/{{cart.product.id}}" method="post">
+            {% csrf_token %}
+            <input type="number" value="{{ cart.quantity}}" class="cart-quantity" name="quantity">
+            <button>Save</button>
+        </form>
     </div>
+    
     <br>
-        <i style="color: red; font-size:20px" class="fa-solid fa-trash cart-remove"></i>
+       <a href="/Delete_Cart/{{cart.product.id}}"> <i style="color: red; font-size:20px" class="fa-solid fa-trash cart-remove"></i></a>
 </div>
+
 {% endfor %} 
 
 <div class="total">

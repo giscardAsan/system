@@ -27,7 +27,7 @@
                 <p class="description"><b><del>${{ product.description}}</del></b></p>
                 <span class="price">$ {{ product.price}}</span>
             </div>
-            <a href="add-cart/<int:product_id>"><button type="button" class="add-cart">Add Cart</button></a>
+            <a href="/add-cart/{{ product.id}}"><button type="button" class="add-cart">Add Cart</button></a>
         </div>
         
     {% endfor %}
