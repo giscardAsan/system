@@ -22,7 +22,7 @@ def send_welcome_email(request):
         global inactive_user
         recepient_list = [inactive_user]
         send_mail(subject,massage,from_mail,recepient_list)
-        return redirect("home")
+        return redirect("main")
 
 
 
@@ -66,7 +66,7 @@ class CustomLoginView(LoginView):
              # GET method
              if self.request.user.is_authenticated: 
                 print(" Remember ME !!!!")
-         return reverse_lazy('home')
+         return reverse_lazy('main')
 
 
 
@@ -87,7 +87,7 @@ class CustomRegisterView(FormView):
 
     def get(self, request, *args, **kwargs):
         if self.request.user.is_authenticated:
-            return redirect("home")  # Prevent User Registeration form from showing
+            return redirect("main")  # Prevent User Registeration form from showing
         return super(CustomRegisterView, self).get(request, *args, **kwargs)
 
 

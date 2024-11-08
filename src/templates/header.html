@@ -1,0 +1,76 @@
+{% load static %}
+
+
+
+<header>
+    <input type="checkbox" name="" id="chki">
+    <div class="logo"><h1><img src="{% static 'imagefolder/images/Screenshot.png' %}" width="90px" alt=""></h1></div>
+    <div class="search-box">
+        <form action="" method="post">
+            <input type="text" name="search" id="srch" placeholder="search">
+            <button type="submit"><i class="fa fa-search"></i></button>
+        </form>
+    </div>
+    <ul>
+        <li><a href="/main">HOME</a></li>
+        <li><a href="/new">NEW</a></li>
+        <li><a href="/about">ABOUT</a></li>
+        <li><a href="/contact">CONTACT</a></li>
+        <li><a href="{% url 'logout' %}">Logout</a></li>
+        <!-- <li><a href="login.html"><img style="border-radius: 1rem; background-color:white;" src="{% static 'imagefolder/icons/account.png' %}" width="19px" alt=""></a></li> -->
+        
+        <li>
+            <!-- <a href=""><i class="fab fa-facebook"></i></a>
+            <a href=""><i class="fab fa-twitter"></i></a>
+            <a href=""><i class="fab fa-instagram"></i></a> -->
+
+            
+                          <!-- cart icon -->
+                <i class="fa-solid fa-lock" id="cart-icon"></i>           
+                <div class="cart">
+                    <p class="maint">GO TO NEW-PAGE TO PLACE <br>YOUR ORDER</p>
+                    <br>
+                    <h2 class="cart-title" style="color: black;">YOUR CART</h2>
+    
+                    <div class="cart-content">
+    
+                    </div>
+    
+                    <div class="total">
+                        <div class="total-title">Total</div>
+                        <div class="total-price">$0</div>
+                    </div>
+                    <button type="button" class="btn-buy">Buy Now</button>
+                    <i style="color: black;" class="fa-solid fa-x" id="close-cart"></i>
+                </div>
+        </li>
+</ul>
+<div class="memu">
+    <label for="chki">
+       <i class="fa fa-bars"></i>
+    </label>
+</div>
+<style>
+    .maint{
+        text-align: center;
+        font-size: 1.2rem;
+        font-weight: 600;
+    }
+</style>
+</header>
+
+
+    
+<div>
+{% if request.user.is_authenticated %}
+    <input class="log" type="submit" value="Login">
+{% else %}
+</div>
+
+    <div>
+       
+    </div>
+    
+    
+    {% endif %}
+
