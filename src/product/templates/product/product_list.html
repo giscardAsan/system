@@ -6,31 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-</head>
-<body>
-    <h1> Latest Phone</h1>
-
-    {% for product in phone %}
-    <div class="shop-content">
-        <div class="product-box">
-            <img class="image" src="{{ product.image.url }}"/>
-            <h2 class="product-title">{{ product.name}}</h2>
-            <p class="rate">
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-            </p>
-    
-            <br>
-            <div class="flex">
-                <p class="description"><b><del>${{ product.description}}</del></b></p>
-                <span class="price">$ {{ product.price}}</span>
-            </div>
-            <a href="/add-cart/{{ product.id}}"><button type="button" class="add-cart">Add Cart</button></a>
-        </div>
-        
-    {% endfor %}
     <style>
         :root{
             --main-color: #fd4646;
@@ -271,5 +246,30 @@
 
 
     </style>
+</head>
+<body>
+    <h1> Latest Phone</h1>
+
+    {% for product in phone %}
+    <div class="shop-content">
+        <div class="product-box">
+            <img class="image" src="{{ product.image.url }}"/>
+            <h2 class="product-title">{{ product.name}}</h2>
+            <p class="rate">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+            </p>
+    
+            <br>
+            <div class="flex">
+                <p class="description"><b><del>${{ product.description}}</del></b></p>
+                <span class="price">$ {{ product.price}}</span>
+            </div>
+            <a href="/add-cart/{{ product.id}}"><button type="button" class="add-cart">Add Cart</button></a>
+        </div>
+    {% endfor %}
+
 </body>
 </html>

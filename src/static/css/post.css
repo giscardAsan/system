@@ -1,0 +1,12 @@
+.Post{
+    color: white;
+}
+
+.image{
+    display: block;
+    width: 50%;
+}
+
+.Post p{
+    color: rgba(255, 255, 255, 0.514);
+}

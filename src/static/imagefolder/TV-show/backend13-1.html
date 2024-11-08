@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/backend.css">
+    <link rel="stylesheet" href="../css/mystyle.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body style="background-color: rgba(0, 0, 0, 0.918)">
+
+    <style>
+        header{
+            width: 100%;
+            height: 100px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            z-index: 99;
+            box-shadow: 0 0 10px #000;
+            background: rgb(0, 0, 0);
+        }
+    
+        #chki{
+            display: none;
+        }
+    
+        i{
+            color: white;
+            cursor: pointer;
+        }
+    
+        header .logo{
+            flex: 1;
+            margin-left: 50px;
+            text-transform: uppercase;
+            font-size: 15px;
+        }
+    
+        header .search-box{
+            flex: 1;
+            position: relative;
+        }
+    
+        .search-box input{
+            width: 100%;
+            height: 40px;
+            border: none;
+            outline: none;
+            background-color: white;
+            border-radius: 30px;
+            color: gray;
+            font-size: 16px;
+            text-align: center;
+            padding-left: 5px;
+            padding-right: 40px;
+        }
+    
+        .search-box button{
+            cursor: pointer;
+            width: 40px;
+            height: 40px;
+            border-radius: 30px;
+            border: none;
+            position: absolute;
+            top: 0;
+            right: 0;
+            transform: scale(0.9);
+            background-color: green;
+        }
+    
+        header ul{
+            flex: 2;
+            display: flex;
+            justify-content: space-evenly;
+        }
+    
+        header ul li{
+            list-style: none;
+        }
+    
+        header ul li a{
+            text-decoration: none;
+            color: white;
+            font-weight: 600;
+            text-transform: uppercase;
+            padding: 10px 15px;
+        }
+    
+        header ul li a:hover{
+            border-bottom: 2px solid cadetblue;
+        }
+    
+        header .memu{
+            font-size: 2.5em;
+            display: none;
+        }
+    
+        @media(max-width:1000px){
+            .search-box button{
+                position: absolute;
+            }
+    
+            header ul{
+                position: fixed;
+                top: 100px;
+                right: -100%;
+                background: rgba(0,0,0,0.5);
+                height: calc(100vh - 100px);
+                width: 50%;
+                flex-direction: column;
+                align-items: center;
+                transform: right 0.5s linear;
+            }
+    
+            header .memu{
+                display: block;
+                width: 100px;
+                text-align: center;
+            }
+    
+            #chki:checked ~ ul{
+                right: 0;
+            }
+        }
+    
+        @media(max-width:600px){
+            header .logo{
+                font-size: 10px;
+                margin-left: 8px;
+            }
+    
+            header ul{
+                width: 100;
+            }
+        }
+    </style>
+    
+        <header>
+            <input type="checkbox" name="" id="chki">
+            <div class="logo"><h1><img src="../images/Screenshot.png" width="150px" alt=""></h1></div>
+            <div class="search-box">
+                <form action="" method="post">
+                    <input type="text" name="search" id="srch" placeholder="search">
+                    <button type="submit"><i class="fa fa-search"></i></button>
+                </form>
+            </div>
+            <ul>
+                <li><a href="home.html">HOME</a></li>
+                <li><a href="about us.html">ABOUT</a></li>
+                <li><a href="contact.html">CONTACT</a></li>
+                <li><a href="login.html"><img style="border-radius: 1rem; background-color:white;" src="../icons/account.png" width="19px" alt=""></a></li>
+                
+                    <li>
+                        <a href=""><i class="fab fa-facebook"></i></a>
+                        <a href=""><i class="fab fa-twitter"></i></a>
+                        <a href=""><i class="fab fa-instagram"></i></a>
+                    </li>
+            </ul>
+            <div class="memu">
+                <label for="chki">
+                   <i class="fa fa-bars"></i>
+                </label>
+            </div>
+        </header>
+    <br>
+    <br>
+    <br>
+
+
+
+
+
+
+
+
+
+
+    <div id="appMountPoint">
+        <div class="basicLayout nonmemberTitle dark" lang="en-GH" dir="ltr">
+            <div class="css-16k8cq6 e1yb99j90"></div>
+                
+<section class="nmtitle-section section-hero" id="section-hero">
+    <div class="hero-container">
+        <div class="info-container css-0">
+                <div class="details-container">
+                    <div class="title-info" data-uia="title-info">
+                        <h1 class="title-title" data-uia="title-info-title">DWINDLE</h1>
+                        <div class="title-info-metadata-wrapper" data-uia="title-info-metadata-wrapper"><span class="title-info-metadata-item item-year" data-uia="item-year">2021</span><span role="presentation" class="info-spacer"> | </span><span class="title-info-metadata-item item-maturity" data-uia="item-maturity"><span class="maturity-rating"><span class="screen-reader-text">Maturity Rating:</span><span class="maturity-number">13+ </span></span></span><span role="presentation" class="info-spacer"> | </span><span class="title-info-metadata-item item-runtime" data-uia="item-runtime"><span class="duration">2h 5m</span></span><span role="presentation" class="info-spacer"> | </span><a class="title-info-metadata-item item-genre" href="https://www.netflix.com/gh/browse/genre/81746416" data-uia="item-genre">Comedy</a></div><div class="title-info-synopsis-talent" data-uia="title-info-synopsis-talent"><div class="title-info-synopsis" data-uia="title-info-synopsis">After hijacking a car, two desperate friends find themselves on a perilous journey involving assassins, police and a kidnapped governor.</div><div class="title-info-talent"><div class="title-data-info-item item-starring"><span class="title-data-info-item-label">Starring:</span><span class="title-data-info-item-list" data-uia="info-starring">Funke Akindele, Bisola Aiyeola, Broda Shaggi</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="hero-image-container css-0">
+        <div class="hero-image hero-image-desktop" style="display:none;background-image:url(&quot;https://occ-0-6325-34.1.nflxso.net/dnm/api/v6/E8vDc_W8CLv7-yMQu8KMEC7Rrr8/AAAABbLfhshMianim_eD5tG9WXiPEiNGrjjO5WS6wHsMsFIfEJ0E15XKk7LghKSYEn-XMCnq4NerH3g77dGhOCa531psiqJmjg1TzjwR.jpg?r=3db&quot;)"></div><div class="hero-image hero-image-mobile" style="display:none;background-image:url(&quot;https://occ-0-6325-34.1.nflxso.net/dnm/api/v6/E8vDc_W8CLv7-yMQu8KMEC7Rrr8/AAAABbLfhshMianim_eD5tG9WXiPEiNGrjjO5WS6wHsMsFIfEJ0E15XKk7LghKSYEn-XMCnq4NerH3g77dGhOCa531psiqJmjg1TzjwR.jpg?r=3db&quot;)"></div><picture class="hero-image-loader" data-uia="title-logo"><source media="(max-width: 599px)" srcset="https://occ-0-6325-34.1.nflxso.net/dnm/api/v6/E8vDc_W8CLv7-yMQu8KMEC7Rrr8/AAAABbLfhshMianim_eD5tG9WXiPEiNGrjjO5WS6wHsMsFIfEJ0E15XKk7LghKSYEn-XMCnq4NerH3g77dGhOCa531psiqJmjg1TzjwR.jpg?r=3db"><source media="(min-width: 600px)" srcset="https://occ-0-6325-34.1.nflxso.net/dnm/api/v6/E8vDc_W8CLv7-yMQu8KMEC7Rrr8/AAAABbLfhshMianim_eD5tG9WXiPEiNGrjjO5WS6wHsMsFIfEJ0E15XKk7LghKSYEn-XMCnq4NerH3g77dGhOCa531psiqJmjg1TzjwR.jpg?r=3db"><img src="" alt="" aria-hidden="true">
+                        </picture>
+                    </div>
+                </div>
+                         
+
+            </section>
+            
+            <section class="nmtitle-section" id="section-more-details" data-uia="section-more-details"><div class="section-header" data-uia="section-header"><h2 class="section-header-text section-item" data-uia="section-header-text">More Details</h2></div><div class="more-details-container"><div class="more-details-cell cell-download" data-uia="more-details-cell-download"><div class="more-details-label">Watch offline</div><div class="more-details-item-container"><span class="more-details-item item-download" data-uia="more-details-item-download">Download and watch everywhere you go.</span></div></div><div class="more-details-cell cell-genres" data-uia="more-details-cell-genres"><div class="more-details-label">Genres</div><div class="more-details-item-container"><span class="more-details-item item-genres" data-uia="more-details-item-genres"><a class="more-details-item item-genres">Nollywood</a>, </span><span class="more-details-item item-genres" data-uia="more-details-item-genres"><a class="more-details-item item-genres" href="https://www.netflix.com/gh/browse/genre/5763">Drama Movies</a>, </span><span class="more-details-item item-genres" data-uia="more-details-item-genres"><a class="more-details-item item-genres" href="https://www.netflix.com/gh/browse/genre/6548">Comedy Movies</a>, </span><span class="more-details-item item-genres" data-uia="more-details-item-genres"><a class="more-details-item item-genres" href="https://www.netflix.com/gh/browse/genre/3947">Social Issue Dramas</a>, </span><span class="more-details-item item-genres" data-uia="more-details-item-genres"><a class="more-details-item item-genres">African Movies</a></span></div></div><div class="more-details-cell cell-mood-tag" data-uia="more-details-cell-mood-tag"><div class="more-details-label">This movie is...</div><div class="more-details-item-container"><span class="more-details-item item-mood-tag" data-uia="more-details-item-mood-tag">Offbeat</span></div></div><div class="more-details-cell cell-audio" data-uia="more-details-cell-audio"><div class="more-details-label">Audio</div><div class="more-details-item-container"><span class="more-details-item item-audio" data-uia="more-details-item-audio">English [Original]</span></div></div><div class="more-details-cell cell-subtitle" data-uia="more-details-cell-subtitle"><div class="more-details-label">Subtitles</div><div class="more-details-item-container"><span class="more-details-item item-subtitle" data-uia="more-details-item-subtitle">English</span></div></div></div><div class="more-details-container-cast"><div class="more-details-cell cell-cast" data-uia="more-details-cell-cast"><div class="more-details-label">Cast</div><div class="more-details-item-container"><span class="more-details-item item-cast" data-uia="more-details-item-cast">Funke Akindele</span><span class="more-details-item item-cast" data-uia="more-details-item-cast">Bisola Aiyeola</span><span class="more-details-item item-cast" data-uia="more-details-item-cast">Broda Shaggi</span><span class="more-details-item item-cast" data-uia="more-details-item-cast">Jide Kene Achufusi</span><span class="more-details-item item-cast" data-uia="more-details-item-cast">Timini Egbuson</span><span class="more-details-item item-cast" data-uia="more-details-item-cast">Jibola Dabo</span><span class="more-details-item item-cast" data-uia="more-details-item-cast">Tope Olowoniyan</span><span class="more-details-item item-cast" data-uia="more-details-item-cast">Gold Ikponmwosa</span><span class="more-details-item item-cast" data-uia="more-details-item-cast">Gregory Ojefua</span><span class="more-details-item item-cast" data-uia="more-details-item-cast">Lateef Adedimeji</span><span class="more-details-item item-cast" data-uia="more-details-item-cast">Demi Banwo</span></div></div></div></section><section class="nmtitle-section" id="section-more-titles" data-uia="section-more-titles" data-nosnippet="true"><div class="section-header" data-uia="section-header"><h2 class="section-header-text section-item" data-uia="section-header-text">More Like This</h2></div><div class="link-container"><a class="title-link" href="/gh/title/81591160" data-uia="title-link"><img class="title-link-img" data-uia="title-link-img" src="https://occ-0-6325-34.1.nflxso.net/dnm/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABUxiP8JT7H1fOu-ZdGHb5vpyN8SeJUK44Hnk3SqhPvbXV4WufO0Jc6dmHJ667qkhATngITVBvb4ShbRcUZLFo_STdLUimpeKqbd3.jpg?r=5f3" alt="Breaded Life" loading="lazy"></a><a class="title-link" href="/gh/title/81709709" data-uia="title-link"><img class="title-link-img" data-uia="title-link-img" src="https://occ-0-6325-34.1.nflxso.net/dnm/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABVH-FUMmsPqaJ3onPFBFuvOo5umAF08TVbY0nY5ahesBXlHk3tLyAPtehpffOlPk7R6jmKdG5t-Y0zLCU9kK-eSAwJU5wGqaDbL0.jpg?r=82d" alt="Shina" loading="lazy"></a><a class="title-link" href="/gh/title/81591158" data-uia="title-link"><img class="title-link-img" data-uia="title-link-img" src="https://occ-0-6325-34.1.nflxso.net/dnm/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABa9qkeCJfqjR2SDUg1-9S9Akij9z6qWNfn_gGXFN-fa6UAXhZ-_NhJkJgHA-AAsLH9tY0m7GL0F0lNyAls5MqClMRbsTf61JMlhL.jpg?r=09c" alt="My Village People" loading="lazy"></a><a class="title-link" href="/gh/title/81591162" data-uia="title-link"><img class="title-link-img" data-uia="title-link-img" src="https://occ-0-6325-34.1.nflxso.net/dnm/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABbN4CVz56toGzBGdWwx_8F5oRihU1FeIZs9ymtx1tH15UJwr-7A-7SNEeude7kpAqtahYDi3pH8fSzb8aoDYVXD_1OXU3goHXAVa.jpg?r=b3b" alt="Soólè" loading="lazy"></a><a class="title-link" href="/gh/title/81591155" data-uia="title-link"><img class="title-link-img" data-uia="title-link-img" src="https://occ-0-6325-34.1.nflxso.net/dnm/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABaJlydqiFsRUuiUPGdSPseqm0kRcYB54K5YjeuHrEVWAKlWxz0roUSlEOYqPbXQpDES_iIe5F-Cd0CeTlJroK4p5IuvAdbUW6UHN.jpg?r=893" alt="Aki and Paw Paw" loading="lazy"></a><a class="title-link" href="/gh/title/81435736" data-uia="title-link"><img class="title-link-img" data-uia="title-link-img" src="https://occ-0-6325-34.1.nflxso.net/dnm/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABQIWnJSXeupfNsS540W77kAKDBm2tnSTJOPafhfV0C-r2R9i4blSfCOGUx9YgT-1UxDDqm2L43wV9K4RMzLtJhHrHh3pxz7XKDVR.jpg?r=00b" alt="Omo Ghetto: the Saga" loading="lazy"></a><a class="title-link" href="/gh/title/81172848" data-uia="title-link"><img class="title-link-img" data-uia="title-link-img" src="https://occ-0-6325-34.1.nflxso.net/dnm/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABelSfKu84UztQIiATs4c5zFUzyLaP9Ojf0J9GQMiuAodHKUJMRRNM6ya043x2ztKft7pg-Qvc1UczKqabyqDKPOOzbaM6BC4rlGb.jpg?r=a9e" alt="Moms at War" loading="lazy"></a><a class="title-link" href="/gh/title/81663107" data-uia="title-link"><img class="title-link-img" data-uia="title-link-img" src="https://occ-0-6325-34.1.nflxso.net/dnm/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABcR4k01IC2OO1-dmBDvgxV42QpI8FOeQoPAnKBs9YTm7drXXdogM2BDaIorDInrvBlylpBrFAdTdVYyzNC9XqdMADTiUXiWVCojb.jpg?r=6d0" alt="Passport" loading="lazy"></a><a class="title-link" href="/gh/title/81270838" data-uia="title-link"><img class="title-link-img" data-uia="title-link-img" src="https://occ-0-6325-34.1.nflxso.net/dnm/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABQyDGH-CUXocGZEqTlDd_3i5oTHBHQI0-M3Ao8MROtBYEA7HDiq0WBIyi296taAnWYFZkZrkbMyn6JNO_uNeV1S6IMXcY8BgTO5W.jpg?r=192" alt="Sugar Rush" loading="lazy"></a><a class="title-link" href="/gh/title/81592483" data-uia="title-link"><img class="title-link-img" data-uia="title-link-img" src="https://occ-0-6325-34.1.nflxso.net/dnm/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABUD2Sx855EyHWP_mFRapFU0JSy8mSzS8npyNtH5lZFoF8d3PbE9BnUMGE9b9bgiubkc4Gq9jnRsuM3Lu0yH9DjOGI1zWt712OZoT.jpg?r=841" alt="Lockdown" loading="lazy"></a><a class="title-link" href="/gh/title/81591161" data-uia="title-link"><img class="title-link-img" data-uia="title-link-img" src="https://occ-0-6325-34.1.nflxso.net/dnm/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABdtBf_nX7MMpL0m_yz63WWsD0S2w8TZ8AeWUJrzGQLCDBzrhfINVYtGKwsOLia8w9xuZzvREhDms9ZvUay02E__TQlBTe3zCkcDb.jpg?r=7c0" alt="Dinner at My Place" loading="lazy"></a><a class="title-link" href="/gh/title/81663109" data-uia="title-link"><img class="title-link-img" data-uia="title-link-img" src="https://occ-0-6325-34.1.nflxso.net/dnm/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABcLHHhc3hAd-U569_kTrGajwJ_ggHcLzu2P4wN06hNH3Fvj6RdPPMcV7qHnCaSr3UpHVqDjgHs0o_qOZoR1qrbX-htmfGgaI5dl7.jpg?r=6ca" alt="Obara'M" loading="lazy"></a>
+            </div>
+        </section>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    
+    <footer>
+        <div class="footer-col">
+            <h4>Top 5 movies</h4>
+            <ul>
+                <li><a href="../backend1-4.html">Strong Girl</a></li>
+                <li><a href="../backend1-1.html">Anikulapo</a></li>
+                <li><a href="../backeand1-3.html">Lift</a></li>
+                <li><a href="../backend1-1.html">Atlas</a></li>
+                <li><a href="../backend1-6.html">Trigger Warning</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h4>Top 5 TV Shows</h4>
+            <ul>
+                <li><a href="../backend13-1.html">Dwindle</a></li>
+                <li><a href="../backend13-1.html">Blood Sisters</a></li>
+                <li><a href="../backend13-1.html">Passport</a></li>
+                <li><a href="../backend13-1.html">Lock Down</a></li>
+                <li><a href="../backend13-1.html">Ileowo</a></li>
+               
+            </ul>
+        </div>
+       
+        <div class="footer-col">
+            <h4>Top 5 new on provider</h4>
+            <ul>
+                <li><a href="#">What's new on netflix</a></li>
+                <li><a href="#">What's new on Amazon Prime <br>video</a></li>
+                <li><a href="#">What's new on Disney plus</a></li>
+                <li><a href="#">What's new on Apple TV plus</a></li>
+                <li><a href="#">What's new on Apple TV</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h4>Next upcoming movies</h4>
+            <ul>
+                <li><a href="../backend1-1.html">Anikulapo</a></li>
+                <li><a href="../backend1-2.html">The GentelMan</a></li>
+                <li><a href="../backend1-4.html">Strong Girl</a></li>
+                <li><a href="../backend1-1.html">Atlas</a></li>
+                <li><a href="../backeand1-3.html">Lift</a></li>
+            </ul>
+        </div>
+      </footer>
+      
+      <hr>
+      <style>
+        .support_footer{
+            width: 100%;
+            font-size: 16px;
+            font-weight: normal;
+            font-style: normal;
+            letter-spacing: normal;
+            text-align: center;
+            color: white;
+            background-color: #0a0a0c;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            justify-content: space-around;
+        }
+        
+        .pop a{
+            color: rgba(78, 212, 221, 0.582);
+        }
+        
+      </style>
+      <nav class="support_footer">
+        
+        <div class="pop">
+            <br>
+            <p>© 2024 MOVIEgaiN -All external content remains the property or the rightful owner. <br>Imprint - <a href="../pages_fils/policy.html"> Privacy Policy </a>- <a href="../pages_fils/talent.html">Talent</a></p>
+            <br>
+          </div> 
+      </nav>
+    
+    </body>
+    </html>

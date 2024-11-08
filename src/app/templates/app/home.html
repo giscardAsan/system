@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -7,62 +8,413 @@
 </head>
 <body>
 
-    <style>
-        .container{
-        width: 100%;
-        height: 100px;
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-        position: fixed;
-        z-index: 99;
-        box-shadow: 0 0 10px #000;
-        background-color: red;
-        }
-
-        
-    </style>
+   
     {% block header %}
-    <header class="container">
-        <div>
-         {% if request.user.is_superuser or request.user.is_staff %}
-         <a href="{% url 'admin' %}">AdminPage</a>
-         {% endif %}
-        </div>
-         
-         
-         {% if request.user.is_authenticated %}
-         <div>
-         <input class="log" type="submit" value="Login">
-        </div>
-
-         {% else %}
-     
-         <div>
-            <a href="{% url 'logout' %}">Logout</a>
-         </div>
-         <a href="">
-            {% if request.user.is_authenticated %}
-            <P>Dont  have an account? <a href="{% url 'password_change' %}">password_change</a></P>
-            {% endif %}
-         </a>
-         
-         {% endif %}
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: arial;
+            background-attachment: fixed;
+        }
+    
+    
         
-        </header>
+    
+        header{
+            width: 100%;
+            height: 90px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            z-index: 99;
+            box-shadow: 0 0 10px #000;
+            background: rgb(0, 0, 0);
+        }
+    
+        #chki{
+            display: none;
+        }
+    
+        i{
+            color: white;
+            cursor: pointer;
+        }
+    
+        header .logo{
+            flex: 1;
+            margin-left: 50px;
+            text-transform: uppercase;
+            font-size: 15px;
+        }
+    
+        header .search-box{
+            flex: 1;
+            position: relative;
+        }
+    
+        .search-box input{
+            width: 100%;
+            height: 40px;
+            border: none;
+            outline: none;
+            background-color: white;
+            border-radius: 30px;
+            color: gray;
+            font-size: 16px;
+            text-align: center;
+            padding-left: 5px;
+            padding-right: 40px;
+        }
+    
+        .search-box button{
+            cursor: pointer;
+            width: 40px;
+            height: 40px;
+            border-radius: 30px;
+            border: none;
+            position: absolute;
+            top: 0;
+            right: 0;
+            transform: scale(0.9);
+            background-color: green;
+        }
+    
+        header ul{
+            flex: 2;
+            display: flex;
+            justify-content: space-evenly;
+        }
+    
+        header ul li{
+            list-style: none;
+        }
+    
+        header ul li a{
+            text-decoration: none;
+            color: white;
+            font-weight: 600;
+            text-transform: uppercase;
+            padding: 10px 15px;
+        }
+    
+        header ul li a:hover{
+            border-bottom: 2px solid cadetblue;
+        }
+    
+        
+    
+        @media(max-width:1000px){
+            .search-box button{
+                position: absolute;
+            }
+    
+           
+    
+           
+    
+            #chki:checked ~ ul{
+                right: 0;
+            }
+        }
+    
+        @media(max-width:600px){
+            header .logo{
+                font-size: 10px;
+                margin-left: 8px;
+            }
+    
+            header ul{
+                width: 100;
+            }
+        }
+    
+        a button{
+            width: 60px;
+            height: 30px;
+            background-color: red;
+            color: white;
+        }
+    </style>
+    <header>
+        <input type="checkbox" name="" id="chki">
+        <div class="logo"><h1><img src="{% static 'imagefolder/images/Screenshot.png' %}" width="150px" alt=""></h1></div>
+        <!-- <div class="search-box">
+            <form action="" method="post">
+                <input type="text" name="search" id="srch" placeholder="search">
+                <button type="submit"><i class="fa fa-search"></i></button>
+            </form>
+        </div> -->
+        <ul>
+          
+            
+                <li>
+                    <a href=""><i class="fab fa-facebook"></i></a>
+                    <a href=""><i class="fab fa-twitter"></i></a>
+                    <a href=""><i class="fab fa-instagram"></i></a>
+                </li>
+    
+    
+                  <!-- <li><a href="new.html">NEW</a></li>
+            <li><a href="about us.html">ABOUT</a></li>
+            <li><a href="contact.html">CONTACT</a></li> -->
+            <li><a href="/app/login"><button>LOGIN</button></a></li>
+        </ul>
+       
+    </header>
+    <br>
+    <br>
     {% endblock %} 
   
+
+
+
   {% block content %}
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <p>{{request.user}}</p>
-  <p>{{key}}</p>
+  <style>
+    .default-ltr-cache-142hwrm {
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        color: rgb(255,255,255);
+        text-align: center;
+        box-sizing: border-box;
+        padding: 10.5rem 0 1rem;
+    }
+
+   
+
+    .default-ltr-cache-1opu7t3 {
+        height: 100%;
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: 100%;
+    }
+
+    .default-ltr-cache-1nqqplm {
+        position: relative;
+        overflow: hidden;
+        height: 100%;
+        width: 100%;
+    }
+
+    .default-ltr-cache-1jxs5rh {
+        height: 100%;
+        width: 100%;
+        -webkit-transform: scale(1.25) translateY(-10%);
+        -moz-transform: scale(1.25) translateY(-10%);
+        -ms-transform: scale(1.25) translateY(-10%);
+        transform: scale(1.25) translateY(-10%);
+        object-fit: cover;
+    }
+
+    @media screen and (max-width: 599.98px) {
+        .default-ltr-cache-1jxs5rh {
+            width:auto;
+            -webkit-transform: none;
+            -moz-transform: none;
+            -ms-transform: none;
+            transform: none;
+        }
+    }
+
+    .default-ltr-cache-1y1tnl9 {
+        background: rgb(0 0 0 / 40%);
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+    }
+
+    .default-ltr-cache-d4qcmr {
+        margin: auto;
+        max-width: calc( 100% - 3rem );
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-align-items: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    @media screen and (min-width: 600px) {
+        .default-ltr-cache-d4qcmr {
+            max-width:calc( 100% - 4rem );
+        }
+    }
+
+    @media screen and (min-width: 960px) {
+        .default-ltr-cache-d4qcmr {
+            max-width:calc( 100% - 4rem );
+        }
+    }
+
+    @media screen and (min-width: 1280px) {
+        .default-ltr-cache-d4qcmr {
+            max-width:calc( 83.33333333333334% - 6rem );
+        }
+    }
+
+    @media screen and (min-width: 1920px) {
+        .default-ltr-cache-d4qcmr {
+            max-width:calc( 66.66666666666666% - 6rem );
+        }
+    }
+
+    @media screen and (min-width: 960px) {
+        .default-ltr-cache-d4qcmr {
+            -webkit-flex-direction:column;
+            -ms-flex-direction: column;
+            flex-direction: column;
+        }
+    }
+
+    .default-ltr-cache-1dvfrvc {
+        -webkit-flex-basis: 50%;
+        -ms-flex-preferred-size: 50%;
+        flex-basis: 50%;
+        padding: 0;
+        z-index: 1;
+        width: 100%;
+    }
+
+</style>
+
+          <div>
+              <div class=" default-ltr-cache-142hwrm e9eyrqp6">
+                  <div class="default-ltr-cache-1opu7t3 e9eyrqp2">
+                      <div class=" default-ltr-cache-1nqqplm e13sg9vu1">
+                          <img alt="" src="{% static 'imagefolder/images/jango.jpg' %}" srcSet="{% static 'imagefolder/images/jango.jpg' %}" class="default-ltr-cache-1jxs5rh e13sg9vu0"/>
+                          <div class=" default-ltr-cache-1y1tnl9 egicmjq0" style="background-image:linear-gradient(to top, rgba(0, 0, 0, 0.8) 0, rgba(0, 0, 0, 0) 60%, rgba(0, 0, 0, 0.8) 100%)"></div>
+                      </div>
+                  </div>
+                  <div class="default-ltr-cache-d4qcmr e9eyrqp1">
+                      <div class="default-ltr-cache-1dvfrvc e9eyrqp5">
+                          <style>
+                              .default-ltr-cache-jpuyb8 {
+                                  margin: 0;
+                              }
+
+                              @media screen and (min-width: 960px) {
+                                  .default-ltr-cache-jpuyb8 {
+                                      font-size:3rem;
+                                      font-weight: 900;
+                                  }
+                              }
+                          </style>
+                          <br>
+
+
+
+                          
+                          <h1 class="default-ltr-cache-jpuyb8 e9eyrqp8">Unlimited movies, TV shows, and more</h1>
+                          <style>
+                              .default-ltr-cache-10i4ild {
+                                  margin: 1rem 0 0;
+                                  font-size: 1.225rem;
+                                  font-weight: 400;
+                              }
+
+                              @media screen and (min-width: 960px) {
+                                  .default-ltr-cache-10i4ild {
+                                      font-size:1.5rem;
+                                      font-weight: 400;
+                                  }
+                              }
+                          </style>
+                          <br>
+
+<p class="default-ltr-cache-10i4ild e9eyrqp7">Watch anywhere. Cancel anytime.</p>
+<style>
+.default-ltr-cache-1asgq30 {
+margin: 1.5rem 0 0;
+}
+</style>
+<br>
+<br>
+                         
+<h3 class="default-ltr-cache-1arr3vy e1w590cc1">Ready to watch? Enter your email to create or login your membership.</h3>
+<br>
+<br>
+
+
+                                      
+
+
+
+
+                                         
+
+                                         
+
+
+
+
+
+
+<style data-emotion="default-ltr-cache 1eb1dj0">
+                                            .default-ltr-cache-1eb1dj0 {
+                                                appearance: none;
+                                                margin: 0;
+                                                -webkit-text-decoration: none;
+                                                text-decoration: none;
+                                                -webkit-box-align: center;
+                                                -ms-flex-align: center;
+                                                align-items: center;
+                                                box-sizing: border-box;
+                                                display: -ms-inline-flexbox;
+                                                display: inline-flex;
+                                                -webkit-box-pack: center;
+                                                -ms-flex-pack: center;
+                                                justify-content: center;
+                                                letter-spacing: normal;
+                                                line-height: 1;
+                                                -moz-user-select: none;
+                                                -ms-user-select: none;
+                                                user-select: none;
+                                                border: 0;
+                                                cursor: pointer;
+                                                fill: currentColor;
+                                                position: relative;
+                                                transition-duration: 250ms;
+                                                transition-property: background-color,border-color;
+                                                transition-timing-function: cubic-bezier(0.9, 0, 0.51, 1);
+                                                vertical-align: text-top;
+                                                width: auto;
+                                                font-size: 1.125rem;
+                                                font-weight: 500;
+                                                min-height: 3rem;
+                                                padding: 0.5rem 1rem;
+                                                border-radius: 0.25rem;
+                                                background: rgb(229,9,20);
+                                                color: rgb(255,255,255);
+                                            }
+
+                                           
+                                        </style>
+                                        <a href="/app/register"><button class=" e1ax5wel2 ew97par0 default-ltr-cache-1eb1dj0 e1ff4m3w2" type="submit">Finish Sign Up</button></a>
+                                      </div>
+                                  </div>
+                              </div>
+
+  
   {% endblock %} 
+
+ 
+  
 </body>
 </html>

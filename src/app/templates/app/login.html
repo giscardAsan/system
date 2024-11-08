@@ -1,22 +1,24 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>login</title>
 </head>
-<body style=" background-color: blue;">
-<div>
-    <a href="{% url 'request-new-link-from-email' %}">Get a new verification link</a>
+<body style="background-image: url('{% static 'imagefolder/images/rawuf.png' %}');">
+<div class="manyy">
+    <a style="color: white" href="{% url 'request-new-link-from-email' %}">Get a new verification link</a>
 </div>
-
-    {% comment %} <body style="background-image: url('{% static 'imagefolder/images/rawuf.png' %}');"> {% endcomment %}
-  
+      
     <style>
+      .manyy{
+        font-size: 15px;
+        font-family: sans-serif;
+    }
      
     .popo{
     display: flex;
-    background-image: url(rawuf.png);
     background-size: cover;
     height: 60vh;
     justify-content: center;
@@ -124,7 +126,7 @@
     
     .register p a:hover{
     text-decoration: underline;
-    color: #a8a8a8;
+    color: blue;
     }
     
     .recover{
@@ -135,6 +137,7 @@
     .recover a{
     text-decoration: none;
     color: rgb(125, 125, 235);
+    color: white
     }
     
     .recover a:hover{
@@ -144,10 +147,10 @@
     </style>
     <br>
         <br>
-        <br>
-        <br>
-        <br> 
-      <h1>User Login</h1>
+      <h1>Login</h1>
+      <br>
+      <br>
+      <br>
       <nav class="popo">
         <section>
       <form method="post">
@@ -163,9 +166,14 @@
           <input type="password" name="password" id="pass" >
           <label style="color: #fff;" for="">PASSWORD</label>
       </div>
-      <p class="recover">
+      <P class="recover">
+        <a href="{% url 'password_change' %}">password_reset</a>
+      </P>
+  
+      <p style="color:white" class="recover">
         <labe>Remrmber</label><input type="checkbox" name="checkbox" value="check">Me
       </p>
+     
       <br>
       <input class="button" type="submit" value="LOGIN">
       <div class="register">
