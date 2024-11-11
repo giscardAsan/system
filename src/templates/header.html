@@ -26,8 +26,8 @@
 
             
                           <!-- cart icon -->
-                <i class="fa-solid fa-lock" id="cart-icon"></i>           
-                <div class="cart">
+               <a href="{% url 'Show_Cart' %}"><i class="fa-solid fa-lock" id="cart-icon">{{ request.session.cart}}</i></a>           
+                {% comment %} <div class="cart">
                     <p class="maint">GO TO NEW-PAGE TO PLACE <br>YOUR ORDER</p>
                     <br>
                     <h2 class="cart-title" style="color: black;">YOUR CART</h2>
@@ -42,7 +42,7 @@
                     </div>
                     <button type="button" class="btn-buy">Buy Now</button>
                     <i style="color: black;" class="fa-solid fa-x" id="close-cart"></i>
-                </div>
+                </div> {% endcomment %}
         </li>
 </ul>
 <div class="memu">

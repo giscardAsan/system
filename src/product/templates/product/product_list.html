@@ -1,275 +1,42 @@
 <!DOCTYPE html>
+ {% extends "layout.html" %} 
 {% load static %}
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <style>
-        :root{
-            --main-color: #fd4646;
-            --text-color: #171427;
-            --bg-color: #fff
-        }
 
-     .rate{
-            display: flex;
-        }
-    
-     .rate i{
-            color: gold;
-            margin-left: 2px;
-        }
-       
-
-        
-        body{
-            color: var(--text-color);
-        }
-
-        .container{
-            max-width: 1200px;
-            margin: auto;
-            width: 100%;
-        }
-
-        
-        #cart-icon{
-            font-size: 1rem;
-            cursor: pointer;
-        }
-
-        .cart{
-            width: 100%%;
-            min-height: 100vh;
-            padding: 20px;
-            background: var(--bg-color);
-            box-shadow: -2px 0 4px hsl(0 4% 15% / 10%);
-            transition: 0.3s;
-            background-color: wheat;
-        }
-
-        .cart.active{
-            right: 0;
-        }
-
-        .cart-title{
-            text-align: center;
-            font-size: 1.5rem;
-            font-weight: 600;
-            margin-top: 2rem;
-        }
-
-        .cart-box{
-            display: grid;
-            grid-template-columns: 32% 50% 18%;
-            align-items: center;
-            gap: 1rem;
-            margin-top: 1rem;
-        }
-
-        .cart-img{
-            width: 110px;
-            height: 100px;
-            object-fit: contain;
-        }
-
-        .detail-box{
-            display: grid;
-            row-gap: 0.5rem;
-        }
-
-        .cart-product-title{
-            font-size: 1rem;
-            text-transform: uppercase;
-        }
-
-        .cart-price{
-            font-weight: 500;
-        }
-
-        .cart-quantity{
-            border: 1px solid var(--text-color);
-            outline-color: var(--main-color);
-            width: 2.4rem;
-            text-align: center;
-            font-size: 1rem;
-        }
-
-        .cart-remove{
-            font-size: 24px;
-            color: var(--main-color);
-            cursor: pointer;
-        }
-
-        .total{
-            display: flex;
-            justify-content: flex-end;
-            margin-top: 1.5rem;
-            border-top: 1px solid var(--text-color);
-        }
-
-        .total-title{
-            font-size: 1rem;
-            font-weight: 600;
-        }
-
-        .total-price{
-            margin-left: 0.5rem;
-        }
-
-        .btn-buy{
-            display: flex;
-            margin: 1.5rem auto 0 auto;
-            padding: 12px 20px;
-            border: none;
-            background: var(--main-color);
-            color: var(--bg-color);
-            font-size: 1rem;
-            font-weight: 500;
-            cursor: pointer;
-        }
-
-        .btn-buy:hover{
-            background: var(--text-color);
-        }
-
-        #close-cart{
-            position: absolute;
-            top: 1rem;
-            right: 0.8rem;
-            font-size: 1.5rem;
-            color: var(--text-color);
-            cursor: pointer;
-        }
-
-        .section-title{
-            font-size: 1.5rem;
-            font-weight: 600;
-            text-align: center;
-            margin-bottom: 1.5rem;
-            color: white;
-        }
-
-
-
-        .shop{
-            margin-top: 2rem;
-        }
-
-        .shop-content{
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, auto));
-            gap: 1.5rem;
-        }
-
-        .product-box{
-            position: relative;
-            background-color: white;
-        }
-
-        .product-box{
-            padding: 10px;
-            border: 1px solid white;
-            transition: 0.4s;
-        }
-
-        .product-img{
-            width: 100%;
-            height: 200px;
-            margin-bottom: 0.5rem;
-        }
-
-        .product-title{
-            font-size: 1.1rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            margin-bottom: 0.5rem;
-        }
-
-        .price{
-            font-weight: 500;
-        }
-
-        .add-cart{
-            position: absolute;
-            bottom: 0;
-            right: 0;
-            background: var(--text-color);
-            color: var(--bg-color);
-            padding: 10px;
-            cursor: pointer;
-        }
-
-        .add-cart:hover{
-            background: hsl(249, 32%, 17%);
-        }
-
-        @media (max-width: 1080px) {
-            .nav {
-                padding: 15px;
-            }
-            section{
-                padding: 3rem 0 2rem;
-            }
-            .container{
-                margin: 0 auto;
-                width: 90%;
-            }
-            .shop{
-                margin-top: 2rem !important;
-            }
-        }
-
-        @media (max-width: 400px) {
-            .nav {
-                padding: 11px;
-            }
-            .logo{
-                font-size: 1rem;
-            }
-            .cart{
-                width: 320px;
-            }
-        }
-
-        @media (max-width: 400px) {
-            .shop{
-                margin-top: 1rem !important;
-            }
-            .cart{
-                width: 90%;
-            }
-        }
-
-
-
-    </style>
 </head>
 <body>
-    <h1> Latest Phone</h1>
-
-    {% for product in phone %}
-    <div class="shop-content">
-        <div class="product-box">
-            <img class="image" src="{{ product.image.url }}"/>
-            <h2 class="product-title">{{ product.name}}</h2>
-            <p class="rate">
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-            </p>
+   {% block content %}
+   <br>
+   <br>
+   <br>
+   <br>
+   <br>
+   <br>
+   <br>
+   <h1> Latest Phone</h1>
+   <section class="shop container">
+   <div class="shop-content">
     
-            <br>
-            <div class="flex">
-                <p class="description"><b><del>${{ product.description}}</del></b></p>
-                <span class="price">$ {{ product.price}}</span>
-            </div>
-            <a href="/add-cart/{{ product.id}}"><button type="button" class="add-cart">Add Cart</button></a>
-        </div>
-    {% endfor %}
-
+   {% for product in phone %}
+       <div class="product-box">
+           <img style="margin-bottom: 0.5rem;" width="100%" height="200px" src="{{ product.image.url }}"/>
+           <h2 class="product-title">{{ product.name}}</h2>
+           <p class="rate">
+               <i class="fa-solid fa-star"></i>
+               <i class="fa-solid fa-star"></i>
+               <i class="fa-solid fa-star"></i>
+               <i class="fa-solid fa-star"></i>
+           </p>
+   
+           <br>
+           <div class="flex">
+               <p class="description"><b><del>${{ product.description}}</del></b></p>
+               <span class="price">$ {{ product.price}}</span>
+           </div>
+           <a href="/add-cart/{{ product.id}}"><button type="button" class="add-cart">Add Cart</button></a>
+       </div>
+   {% endfor %}
+   </div>
+   </section>
+{% endblock %} 
 </body>
 </html>

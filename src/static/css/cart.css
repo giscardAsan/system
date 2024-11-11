@@ -80,7 +80,7 @@
         text-transform: uppercase;
     }
     
-    .cart-price{
+    .cart-price{ 
         font-weight: 500;
     }
     
@@ -161,7 +161,7 @@
     
     .product-box{
         position: relative;
-        background-color: white;
+        background-color: rgb(43, 34, 34);
     }
     
     .product-box{
