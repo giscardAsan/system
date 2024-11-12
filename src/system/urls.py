@@ -35,11 +35,11 @@ urlpatterns = [
     path("", include("product.urls")),
     path("", include("cart.urls")),
     path('app/', include ('app.urls')),
+    path('contact/', include ('contact.urls')),
     path('main/', views.main, name='main'),
     path('watch/', views.watch, name='watch'),
     path('backend/', views.backend, name="endd"),
     path('new/', views.new),
-     path('sale/', views.sale),
     path('talent/', views.talent),
     path('policy/', views.policy),
     path('backend/', views.backend, name="endd"),
@@ -49,8 +49,6 @@ urlpatterns = [
     path('comedy/', views.comedy, name="comedy"),
     path('africa/', views.africa, name="africa"),
     path('upcoming/', views.upcoming),
-    
-   
     
 ]
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

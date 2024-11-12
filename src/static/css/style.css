@@ -1234,25 +1234,91 @@ max-width: 32px;
 
 
 
+/*contact*/
 
+    .modular{
+        width: 100%;
+        text-align: center;
+        color: white;
+        font-size: 20px;
+    }
 
+.home_1{
+     display: flex;
+     flex-wrap: wrap;
+     gap: 100px;
+     justify-content: center;
 
+}
+.home_1 form{
+    display: flex;
+    flex-direction: column;
+    color: white;
 
-
-/* SALE */
-/* 
-.koka{
-    text-align: start;
+}
+.form{
+    color: rgb(12, 11, 11);
+    padding: 20px;
+    background: #0a090952;
+}
+    
+.form input{
+    height: 50px;
+    border-radius: 10px;
+    background-color: #e8e8f3e7;
     width: 100%;
-    font-size: 20px;
-    padding: 10px;
-    background-color: white;
+    color: rgb(3, 3, 3);
+}
+.form input:hover{
+    background-color: rgb(63, 70, 77);
 }
 
-.list{
-    text-align: start;
-    width: 100%;
-    font-size: 20px;
-    padding: 10px;
-} */
+    .inputBox{
+        border: none;
+        width: 100px;
+        background: #00bcd4;
+        color: #fff;
+        cursor: pointer;
+        padding: 10px;
+        font-size: 18px;
+    }
+    .fit{
+        display: flex;
+        justify-content: center;
+        justify-content: space-between;
+        gap: 5px;
+    }
+    .option{
+        height: 50px;
+        border-radius: 10px;
+        background-color: #eaeaf3;
+        font-size: 20px;
+    }
 
+   
+    .contact .box{
+        position: relative;
+        padding: 20px 0;
+        display: flex;
+    }
+
+    .contact .icon{
+        min-width: 60px;
+        height: 60px;
+        display: flex;
+        background: #ebe6e6;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        font-size: 22px;
+    }
+
+    .contact .text{
+        margin-left: 20px;
+        font-size: 16px;
+    }
+
+    .contact .text h3{
+        font-weight: 500;
+        color: #00bcd4;
+    }

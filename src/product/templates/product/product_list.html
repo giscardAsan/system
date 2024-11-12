@@ -12,7 +12,94 @@
    <br>
    <br>
    <br>
-   <h1> Latest Phone</h1>
+   <div>
+    <h1 class="comery">ON SALE</h1>
+    </div>
+    <br>
+    <div class="comety">
+    <h1></h1>
+    </div>
+    <br>
+    <br>
+    <div class="releas">
+    <a href="/new"><h1>New releases</h1></a>
+    <a href="/upcoming"><h1>Upcoming</h1></a>
+    <a href="#"><h1 class="first">Sale</h1></a>
+    </div>
+    <br>
+    <br>
+    
+    <div>
+    <h1 class="all_22">MY SERVICES</h1>
+    </div>
+    
+    <br>
+    <div class="gallery-wrap_2">
+    <img src="icons/10117847.png" alt="" id="backBtn_22">
+    <div class="gallery_22">
+    <div>
+    <a href="#"> <span><img src="{% static 'imagefolder/icons/icon (22).webp' %}" alt=""></span></a>
+    
+    <span><img src="{% static 'imagefolder/icons/icon (21).webp' %}" alt=""></span>
+    
+    <span><img src="{% static 'imagefolder/icons/icon (4).webp' %}" alt=""></span>
+    </div>
+    
+    <div>
+    <span><img src="{% static 'imagefolder/icons/icon (5).webp' %}" alt=""></span>
+    
+    <span><img src="{% static 'imagefolder/icons/icon (6).webp' %}" alt=""></span>
+    
+    <span><img src="{% static 'imagefolder/icons/icon (1).webp' %}" alt=""></span>
+    </div>
+    
+    <div>
+    <span><img src="{% static 'imagefolder/icons/icon (2).webp' %}" alt=""></span>
+    
+    <span><img src="{% static 'imagefolder/icons/icon (8).webp' %}" alt=""></span>
+    
+    <span><img src="{% static 'imagefolder/icons/icon (9).webp' %}" alt=""></span>
+    </div>
+    
+    <div>
+    <span><img src="{% static 'imagefolder/icons/icon (10).webp' %}" alt=""></span>
+    
+    <span><img src="{% static 'imagefolder/icons/icon (11).webp' %}" alt=""></span>
+    
+    <span><img src="{% static 'imagefolder/icons/icon (3).webp' %}" alt=""></span>
+    </div>
+    
+    <div>
+    <span><img src="{% static 'imagefolder/icons/icon (12).webp' %}" alt=""></span>
+    
+    <span><img src="{% static 'imagefolder/icons/icon (13).webp' %}" alt=""></span>
+    
+    <span><img src="{% static 'imagefolder/icons/icon (14).webp' %}" alt=""></span>
+    </div>
+    
+    <div>
+    <span><img src="{% static 'imagefolder/icons/icon (15).webp' %}" alt=""></span>
+    
+    <span><img src="{% static 'imagefolder/icons/icon (16).webp' %}" alt=""></span>
+    
+    <span><img src="{% static 'imagefolder/icons/icon (17).webp' %}" alt=""></span>
+    </div>
+    
+    <div>
+    <span><img src="{% static 'imagefolder/icons/icon (18).webp' %}" alt=""></span>
+    
+    <span><img src="{% static 'imagefolder/icons/icon (19).webp' %}" alt=""></span>
+    
+    <span><img src="" alt=""></span>
+    </div>
+    
+    </div>
+    <img src="icons/10117763.png" alt="" id="nextBtn_22">
+    </div>
+    <br>
+    <br>
+    <br>
+    
    <section class="shop container">
    <div class="shop-content">
     
@@ -29,7 +116,8 @@
    
            <br>
            <div class="flex">
-               <p class="description"><b><del>${{ product.description}}</del></b></p>
+               <p class="description"><b>{{ product.description}}</b></p>
+               <p class="description"><b><del>$55.4</del></b></p>
                <span class="price">$ {{ product.price}}</span>
            </div>
            <a href="/add-cart/{{ product.id}}"><button type="button" class="add-cart">Add Cart</button></a>

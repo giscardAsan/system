@@ -39,8 +39,6 @@ def upcoming(request):
 def talent(request):
    return render(request, 'talent.html')
 
-def sale(request):
-   return render(request, 'sale.html')
 
 def policy(request):
    return render(request, 'policy.html')

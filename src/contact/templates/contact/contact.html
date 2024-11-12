@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+{% extends "layout.html" %}
+{%load static%}
+
+{% block title %}
+   CONTACT
+{% endblock %}
+
+
+{% block content %}
+<body style="background-image: url('{% static 'imagefolder/images/rawuf.png' %}');">
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<nav>
+    <div class="modular">
+        <h1><b>Drop us a message, let's work together</b></h1>
+    </div>
+</nav>
+<br>
+<br>
+<br>
+
+
+    <nav class="home_1">
+        <div class="contact">
+                <div class="box">
+                    <div class="icon"><i style="color: #000;" class="fa-solid fa-location-dot"></i></div>
+                    <div class="text">
+                        <h3>Address</h3>
+                        <br>
+                        <p>br4671 Suger Camp Road,<br><br>Kumasi,Ghanan</p>
+                    </div>
+                </div>
+            <br>
+                    <div class="box">
+                        <div class="icon"><i style="color: #000;" class="fa-solid fa-phone"></i></i></div>
+                        <div class="text">
+                            <h3>Phone</h3>
+                            <br>
+                            <p>0548222830</p>
+                        </div>
+                    </div>
+            <br>
+            <br>
+                <div class="box">
+                        <div class="icon"><i style="color: #000;" class="fa-solid fa-envelope"></i></div>
+                        <div class="text">
+                            <h3>Email</h3>
+                            <br>
+                            <p class="email_1">giscard@MOVIEgaiN.com</p>
+                        </div>
+                       
+                 </div>
+        </div>
+
+
+
+        <div class="form">
+            <P style="margin-left: 10px; font-size: 18px; color:#fff"><b>Use the form below for all other matters</b></P>
+            <br>
+            <form action="#" method="post" enctype="multipart/form-data">
+               <div class="fit">
+                <input style="font-size: 15px; padding-left:10px;"  type="text" name="username" placeholder="First Name" required>
+                <input style="font-size: 15px; padding-left:10px;"  type="text" name="username" placeholder="Last Name" required>
+               </div>
+                <br>
+                <input style="font-size: 15px; padding-left:10px;" type="email" name="email" placeholder="Email Address" required>
+                <br>
+                <input style="font-size: 15px; padding-left:10px;" type="website" name="website" placeholder="Phone Number (option)">
+                <br>
+                    <select style="padding-left:10px; color:rgb(3, 3, 3)" class="option" name="" id="">
+                        <option value="">Select topic of interest</option>
+                        <option value="">Media Buying</option>
+                        <option value="">Content Insights</option>
+                        <option value="">Creative Production</option>
+                    </select>
+                <br>
+                <textarea style="font-size: 20px; border-radius: 6px; background-color: #f1f1fa; color: rgb(8, 8, 8); padding-left:10px;" name="your message" id="" cols="" rows="4" placeholder="How can we help?"></textarea>
+                <br>
+                <button class="inputBox">Send</button>
+            </form>
+        </div>
+    </nav>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+</body>
+{% endblock %}
+
+    
+   

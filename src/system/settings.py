@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     "verify_email",
     'product',
     'cart',
+    'contact',
 
 ]
 
