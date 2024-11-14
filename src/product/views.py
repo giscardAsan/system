@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from cart.models import Cart
 from .models import Product
 
 
@@ -32,22 +33,27 @@ from .models import Product
     #     print(pro)
     # context = {"def_product": product, "imagelist": imageModel, 'related': relatedProduct, 'product_info': product_info}
     # return render(request, "product/show.html", context)
-
-
+     
+    
 def product_list(request):
     phones = Product.objects.all()
     # laptop = Product.objects.filter(name="laptop")
     # Tv = Product.objects.filter(name="Tv")
     # context = {"Phone": phones, "Laptop": laptop, "Tv": Tv}
-    return render(request, "product/product_list.html", {'phone': phones})
+    # return render(request, "product/product_list.html", {'phone': phones})
+
+    if request.user.is_authenticated:
+        Added_cart = Cart.objects.filter(user=request.user).count()
+        request.session['cart'] = Added_cart
+        request.session.modified = True
+        return render(request, "product/product_list.html", {'phone': phones})
+    else:
+
+        request.session['cart'] = 0
+        return render(request, "product/product_list.html", {'phone': phones})
     
-
-    # if request.user.is_authenticated:
-    #     Added_cart = Cart.objects.filter(user=request.user).count()
-    #     request.session['cart'] = Added_cart
-    #     request.session.modified = True
-    #     return render(request, "product/home.html", context)
-    # else:
-
-    #     request.session['cart'] = 0
-    #     return render(request, "product/home.html", context)
+    
+def Product_Detail(request, product_id):
+    ProductDetails = Product.objects.get(id = product_id)
+    return render(request, "product/Product_Detail.html", {'ProductDetail': ProductDetails})
+        

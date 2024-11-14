@@ -74,7 +74,7 @@ class CustomRegisterView(FormView):
     template_name = "app/register.html"
     form_class = UserCreationForm
     redirect_app_user = True
-    success_url = reverse_lazy("main") # Automatically redirect to homepage after Registration
+    success_url = reverse_lazy("send_welcome_email") # Automatically redirect to homepage after Registration
 
     def form_valid(self, form):
         # user = form.save()  # Automatically Save Registering User

@@ -1,5 +1,4 @@
-<!DOCTYPE html>
- {% extends "layout.html" %} 
+{% extends "layout.html" %} 
 {% load static %}
 
 </head>
@@ -103,28 +102,25 @@
    <section class="shop container">
    <div class="shop-content">
     
-   {% for product in phone %}
         <div class="product-box">
-      <a href="/Product_Detail/{{ product.id }}">
 
-            <img    width="100%" height="200px" src="{{ product.image.url }}"/>
-            <h2 style="color: black; " class="product-title">{{ product.name}}</h2>
+            <img width="100%" height="200px" src="{{ ProductDetail.image.url }}"/>
+            <h2 style="color: black; " class="product-title">{{ ProductDetail.name}}</h2>
             <p class="rate">
-                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i> 
                 <i class="fa-solid fa-star"></i>
                 <i class="fa-solid fa-star"></i>
             </p>
     
             <div class="flex">
-                <p class="description"><b>{{ product.date_added}}</b></p>
-                <p style="text-decoration:line-through"><b><del>$ {{ product.cancel_price}}</del></b></p>
-                <span class="price">$ {{ product.price}}</span>
+                <p class="description"><b>{{ ProductDetail.description}}</b></p>
+                <p class="description"><b>{{ ProductDetail.date_added}}</b></p>
+                <p style="text-decoration:line-through"><b><del>${{ ProductDetail.cancel_price }}</del></b></p>
+                <span class="price">$ {{ ProductDetail.price}}</span>
             </div>
-            <a href="/add-cart/{{ product.id}}"><button type="button" class="add-cart">Add Cart</button></a>
-      </a>
+            <a href="/add-cart/{{ ProductDetail.id}}"><button type="button" class="add-cart">Add Cart</button></a>
 
         </div>
-   {% endfor %}
    </div>
    </section>
 {% endblock %} 
