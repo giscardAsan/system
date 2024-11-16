@@ -2,7 +2,7 @@
 {% load static %}
 
 </head>
-<body>
+<body style="background-color:white">
    {% block content %}
    <br>
    <br>
@@ -98,31 +98,256 @@
     <br>
     <br>
     <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <script>
+        var productImg = document.getElementById("productImg");
+        var smallImg = document.getElementsByClassName("small-img");
     
-   <section class="shop container">
-   <div class="shop-content">
+        smallImg[0].onclick = function(){
+            productImg.src = smallImg[0].src;
+        }
+        smallImg[1].onclick = function(){
+            productImg.src = smallImg[1].src;
+        }
+        smallImg[2].onclick = function(){
+            productImg.src = smallImg[2].src;
+        }
+        smallImg[3].onclick = function(){
+            productImg.src = smallImg[3].src;
+        }
     
-        <div class="product-box">
+    </script>
+    <style>
+        .shop-conten{
+            display: flex;
+            flex-wrap: wrap;
+            padding: 25px;
 
-            <img width="100%" height="200px" src="{{ ProductDetail.image.url }}"/>
-            <h2 style="color: black; " class="product-title">{{ ProductDetail.name}}</h2>
-            <p class="rate">
-                <i class="fa-solid fa-star"></i> 
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-            </p>
-    
-            <div class="flex">
-                <p class="description"><b>{{ ProductDetail.description}}</b></p>
-                <p class="description"><b>{{ ProductDetail.date_added}}</b></p>
-                <p style="text-decoration:line-through"><b><del>${{ ProductDetail.cancel_price }}</del></b></p>
-                <span class="price">$ {{ ProductDetail.price}}</span>
+            justify-content: center;
+        }
+
+        .add-carts{
+            background: var(--text-color);
+            color: var(--bg-color);
+            cursor: pointer;
+        }
+
+        .col-2{
+            color: white;
+        }
+
+    .row-2{
+        display: flex;
+        justify-content:space-between
+    }
+
+        containers h4{
+            margin: 20px;
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        Select{
+            padding: 5px;
+            margin-top: 20px;
+            display: block;
+            gap: 10px;
+        }
+
+        .cart-quantitys{
+            width: 50px;
+            height: 35px;
+            padding-left: 10px;
+            font-size: 20px;
+            margin-right: 10px;
+            border: 1px solid #ff523b;
+        }
+
+        .cart-quantitys:focus{
+            outline: none;
+        }
+
+        .ga{
+            color: #ff523b;
+            margin-left: 10px;
+        }
+
+        .small-img-row{
+            display: flex;
+        }
+
+       
+
+    </style>
+<section class="containers">
+<div class="shop-conten">
+    <div class="product-boxs">
+        <img width='100%' height='300px' id="productImg" src="{{ ProductDetail.image.url }}"/>
+<br>
+<br>
+        <div class="small-img-row">
+            <div class="small-img-col">
+                <img style="padding: 0;" width='100%' height='100px' class="small-img" src="{{ ProductDetail.image.url }}"/>
             </div>
-            <a href="/add-cart/{{ ProductDetail.id}}"><button type="button" class="add-cart">Add Cart</button></a>
-
+            <div class="small-img-col">
+                <img style="padding: 0;" width='100%' height='100px' class="small-img" src="{{ ProductDetail.image.url }}"/>
+            </div>
+            <div class="small-img-col">
+                <img style="padding: 0;" width='100%' height='100px' class="small-img" src="{{ ProductDetail.image.url }}"/>
+            </div>
+            <div class="small-img-col">
+                <img style="padding: 0;" width='100%' height='100px' class="small-img" src="{{ ProductDetail.image.url }}"/>
+            </div>
         </div>
-   </div>
-   </section>
-{% endblock %} 
+    </div>
+    <div class='col-2'>
+        <p>Home / Video</p>
+        <h1>gggggggggggg</h1>
+        <h4>$57.2</h4>
+        <Select>
+            <option value="">Timer</option>
+            <option value="">Tralar</option>
+            <option value="">Full Video</option>
+            <option value="">Shot Video</option>
+        </Select>
+        <br>
+        <input type="number" value="{{ ProductDetail.quantity}}" class="cart-quantitys" name="quantity">
+        <a href="/add-cart/{{ ProductDetail.id}}"><button type="button" class="add-carts">Add Cart</button></a>
+        <br>
+        <br>
+        <h3>Product Details <i class="fa fa-indent ga"></i></h3>
+        <br>
+        <p>When you visit our website,<br> our web server temporarily stores <br>each access in a log file. <br>The following data i</p>
+    </div>
+</div>
+</section>
+
+
+
+
+<div class="shop container">
+    <div class="row-2">
+        <h2>Related Videos</h2>
+        <p style="color: white"><a href="">View More</a></p>
+    </div>
+</div>
+<section class="shop container">
+    <div class="shop-content">
+     
+         <div class="product-box">
+       <a href="/Product_Detail/{{ product.id }}">
+ 
+             <img    width="100%" height="200px" src="{{ product.image.url }}"/>
+             <h2 style="color: black; " class="product-title">{{ product.name }}</h2>
+             <p class="rate">
+                 <i class="fa-solid fa-star"></i>
+                 <i class="fa-solid fa-star"></i>
+                 <i class="fa-solid fa-star"></i>
+             </p>
+     
+             <div class="flex">
+                 <p class="description"><b>{{ product.date_added}}</b></p>
+                 <p style="text-decoration:line-through"><b><del>$ {{ product.cancel_price}}</del></b></p>
+                 <span class="price">$ {{ product.price}}</span>
+             </div>
+             <a href="/add-cart/{{ product.id}}"><button type="button" class="add-cart">Add Cart</button></a>
+       </a>
+ 
+         </div>
+
+         <div class="product-box">
+            <a href="/Product_Detail/{{ product.id }}">
+      
+                  <img    width="100%" height="200px" src="{{ product.image.url }}"/>
+                  <h2 style="color: black; " class="product-title">{{ product.name }}</h2>
+                  <p class="rate">
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                  </p>
+          
+                  <div class="flex">
+                      <p class="description"><b>{{ product.date_added}}</b></p>
+                      <p style="text-decoration:line-through"><b><del>$ {{ product.cancel_price}}</del></b></p>
+                      <span class="price">$ {{ product.price}}</span>
+                  </div>
+                  <a href="/add-cart/{{ product.id}}"><button type="button" class="add-cart">Add Cart</button></a>
+            </a>
+      
+              </div>
+
+              <div class="product-box">
+                <a href="/Product_Detail/{{ product.id }}">
+          
+                      <img    width="100%" height="200px" src="{{ product.image.url }}"/>
+                      <h2 style="color: black; " class="product-title">{{ product.name }}</h2>
+                      <p class="rate">
+                          <i class="fa-solid fa-star"></i>
+                          <i class="fa-solid fa-star"></i>
+                          <i class="fa-solid fa-star"></i>
+                      </p>
+              
+                      <div class="flex">
+                          <p class="description"><b>{{ product.date_added}}</b></p>
+                          <p style="text-decoration:line-through"><b><del>$ {{ product.cancel_price}}</del></b></p>
+                          <span class="price">$ {{ product.price}}</span>
+                      </div>
+                      <a href="/add-cart/{{ product.id}}"><button type="button" class="add-cart">Add Cart</button></a>
+                </a>
+          
+                  </div>
+
+                  <div class="product-box">
+                    <a href="/Product_Detail/{{ product.id }}">
+              
+                          <img    width="100%" height="200px" src="{{ product.image.url }}"/>
+                          <h2 style="color: black; " class="product-title">{{ product.name }}</h2>
+                          <p class="rate">
+                              <i class="fa-solid fa-star"></i>
+                              <i class="fa-solid fa-star"></i>
+                              <i class="fa-solid fa-star"></i>
+                          </p>
+                  
+                          <div class="flex">
+                              <p class="description"><b>{{ product.date_added}}</b></p>
+                              <p style="text-decoration:line-through"><b><del>$ {{ product.cancel_price}}</del></b></p>
+                              <span class="price">$ {{ product.price}}</span>
+                          </div>
+                          <a href="/add-cart/{{ product.id}}"><button type="button" class="add-cart">Add Cart</button></a>
+                    </a>
+              
+                      </div>
+
+                      <div class="product-box">
+                        <a href="/Product_Detail/{{ product.id }}">
+                  
+                              <img    width="100%" height="200px" src="{{ product.image.url }}"/>
+                              <h2 style="color: black; " class="product-title">{{ product.name }}</h2>
+                              <p class="rate">
+                                  <i class="fa-solid fa-star"></i>
+                                  <i class="fa-solid fa-star"></i>
+                                  <i class="fa-solid fa-star"></i>
+                              </p>
+                      
+                              <div class="flex">
+                                  <p class="description"><b>{{ product.date_added}}</b></p>
+                                  <p style="text-decoration:line-through"><b><del>$ {{ product.cancel_price}}</del></b></p>
+                                  <span class="price">$ {{ product.price}}</span>
+                              </div>
+                              <a href="/add-cart/{{ product.id}}"><button type="button" class="add-cart">Add Cart</button></a>
+                        </a>
+                  
+                          </div>
+    </div>
+    </section>
+   <br>
+   <br>
+   <br>
+   <br> 
 </body>
-</html>
+</html>  
+{% endblock %} 
