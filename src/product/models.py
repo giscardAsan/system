@@ -14,6 +14,8 @@ class Product(models.Model):
     description = models.TextField(max_length=250)
     cancel_price = models.FloatField(null=True)
     date_added = models.DateTimeField(auto_now_add=True)
+    tax = models.FloatField(null=True)
+    
     
 
     def __str__(self):

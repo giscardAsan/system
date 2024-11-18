@@ -16,6 +16,12 @@ class Cart(models.Model):
 
     def Total_cost(self):
         return self.quantity * self.product.price
+    
+    def taxs(self):
+        return self.product.tax * self.quantity
+    
+    def Total_costs(self):
+        return self.quantity * self.product.price * self.product.tax
 
     def Twelve(self):
 

@@ -6,248 +6,128 @@
     <title>Document</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
-        :root{
-            --main-color: #fd4646;
-            --text-color: #171427;
-            --bg-color: #fff
+        .cart-page{
+            margin: 70px;
         }
 
-     .rate{
-            display: flex;
-        }
-    
-     .rate i{
-            color: gold;
-            margin-left: 2px;
-        }
-       
-
-        
-        body{
-            color: var(--text-color);
-        }
-
-        .container{
-            max-width: 1200px;
-            margin: auto;
+        table{
             width: 100%;
+            border-collapse: collapse;
         }
 
-        
-        #cart-icon{
-            font-size: 1rem;
-            cursor: pointer;
+        .cart-info{
+            display: flex;
+            flex-wrap: wrap;
         }
 
-        .cart{
-            width: 100%%;
-            min-height: 100vh;
-            padding: 20px;
-            background: var(--bg-color);
-            box-shadow: -2px 0 4px hsl(0 4% 15% / 10%);
-            transition: 0.3s;
-            background-color: wheat;
+        th{
+            text-align: left;
+            padding: 5px;
+            color: #fff;
+            background: #ff523b;
+            font-weight: normal;
         }
 
-        .cart.active{
-            right: 0;
+        td{
+            padding: 10px 5px;
         }
 
-        .cart-title{
-            text-align: center;
-            font-size: 1.5rem;
-            font-weight: 600;
-            margin-top: 2rem;
+        td input{
+            width: 30px;
+            height: 20px;
+            padding: 5px;
         }
 
-        .cart-box{
-            display: grid;
-            grid-template-columns: 32% 50% 18%;
-            align-items: center;
-            gap: 1rem;
-            margin-top: 1rem;
+        td a{
+            color: #ff523b;
+            font-size: 12px;
         }
-
-        .cart-img{
-            width: 110px;
+        td img{
+            width: 120px;
             height: 100px;
-            object-fit: contain;
+            margin-right: 10px;
         }
 
-        .detail-box{
-            display: grid;
-            row-gap: 0.5rem;
-        }
-
-        .cart-product-title{
-            font-size: 1rem;
-            text-transform: uppercase;
-        }
-
-        .cart-price{
-            font-weight: 500;
-        }
-
-        .cart-quantity{
-            border: 1px solid var(--text-color);
-            outline-color: var(--main-color);
-            width: 2.4rem;
-            text-align: center;
-            font-size: 1rem;
-        }
-
-        .cart-remove{
-            font-size: 24px;
-            color: var(--main-color);
-            cursor: pointer;
-        }
-
-        .total{
+              
+        .total-price{
             display: flex;
             justify-content: flex-end;
-            margin-top: 1.5rem;
-            border-top: 1px solid var(--text-color);
         }
 
-        .total-title{
-            font-size: 1rem;
-            font-weight: 600;
-        }
-
-        .total-price{
-            margin-left: 0.5rem;
-        }
-
-        .btn-buy{
-            display: flex;
-            margin: 1.5rem auto 0 auto;
-            padding: 12px 20px;
-            border: none;
-            background: var(--main-color);
-            color: var(--bg-color);
-            font-size: 1rem;
-            font-weight: 500;
-            cursor: pointer;
-        }
-
-        .btn-buy:hover{
-            background: var(--text-color);
-        }
-
-        #close-cart{
-            position: absolute;
-            top: 1rem;
-            right: 0.8rem;
-            font-size: 1.5rem;
-            color: var(--text-color);
-            cursor: pointer;
-        }
-
-        .section-title{
-            font-size: 1.5rem;
-            font-weight: 600;
-            text-align: center;
-            margin-bottom: 1.5rem;
-            color: white;
-        }
-
-
-
-        .shop{
-            margin-top: 2rem;
-        }
-
-        .shop-content{
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, auto));
-            gap: 1.5rem;
-        }
-
-        .product-box{
-            position: relative;
-            background-color: white;
-        }
-
-        .product-box{
-            padding: 10px;
-            border: 1px solid white;
-            transition: 0.4s;
-        }
-
-        .product-img{
+        .total-price table{
+            border-top: 3px solid #ff523b;
             width: 100%;
-            height: 200px;
-            margin-bottom: 0.5rem;
+            max-width: 410px
         }
 
-        .product-title{
-            font-size: 1.1rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            margin-bottom: 0.5rem;
+        td:last-child{
+            text-align: right;
         }
 
-        .price{
-            font-weight: 500;
+        th:last-child{
+            text-align: right;
         }
 
-        .add-cart{
-            position: absolute;
-            bottom: 0;
-            right: 0;
-            background: var(--text-color);
-            color: var(--bg-color);
-            padding: 10px;
-            cursor: pointer;
+        @media only screen and (max-width: 600px){
+           .cart-info p{
+            display: none;
+           } 
         }
-
-        .add-cart:hover{
-            background: hsl(249, 32%, 17%);
-        }
-
-        @media (max-width: 1080px) {
-            .nav {
-                padding: 15px;
-            }
-            section{
-                padding: 3rem 0 2rem;
-            }
-            .container{
-                margin: 0 auto;
-                width: 90%;
-            }
-            .shop{
-                margin-top: 2rem !important;
-            }
-        }
-
-        @media (max-width: 400px) {
-            .nav {
-                padding: 11px;
-            }
-            .logo{
-                font-size: 1rem;
-            }
-            .cart{
-                width: 320px;
-            }
-        }
-
-        @media (max-width: 400px) {
-            .shop{
-                margin-top: 1rem !important;
-            }
-            .cart{
-                width: 90%;
-            }
-        }
-
-
-
     </style>
 </head>
 <body>
-    <div class="cart">
+    <div class="small-container cart-page">
+        <table>
+            <tr>
+                <th>Product</th>
+                <th>Quantity</th>
+                <th>Update</th>
+                <th>Subtotal</th>
+            </tr>
+            {% for cart in cart %}
+
+            <tr>
+                <td>
+                    <div class="cart-info">
+                        <img src="{{ cart.product.image.url }}" alt="">
+                        <div class="info-cart">
+                            <p>{{cart.product.name}}</p>
+                            <small>Price: ${{ cart.product.price}}</small>
+                            <br>
+                            <a href="/Delete_Cart/{{cart.product.id}}">Remove</a>
+                        </div>
+                    </div>
+                <td><form action="/Update_Cart/{{cart.product.id}}" method="post">
+                    {% csrf_token %}
+                    <input type="number" value="{{ cart.quantity}}" class="cart-quantity" name="quantity">
+                    <td><button>Save</button></td>
+                </form></td>
+                <td>${{cart.Total_cost }}</td>
+            </td>
+            </tr>
+            {% endfor %}
+
+        </table>
+        <div class="total-price">
+            <table>
+                <tr>
+                    <td>Subtotal</td>
+                    <td>${{ total }}</td>
+                </tr>
+                <tr>
+                    <td>Tax</td>
+                    <td>${{ taxs }}</td>
+                </tr>
+                <tr>
+                    <td>Total</td>
+                    <td>${{ Total_costs }}</td>
+                </tr>
+            </table>
+        </div>
+
+
+    </div>
+    {% comment %} <div class="cart">
         <h2 class="cart-title">Your Cart</h2>
     
    {% for cart in cart %}
@@ -278,7 +158,7 @@
 <button type="button" class="btn-buy">Buy Now</button>
 <i style="color: black;" class="fa-solid fa-x" id="close-cart"></i>
 </div> 
-   
+    {% endcomment %}
 
 
 
