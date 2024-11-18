@@ -126,7 +126,7 @@
             display: flex;
             flex-wrap: wrap;
             padding: 25px;
-
+            gap: 20px;
             justify-content: center;
         }
 
@@ -134,6 +134,7 @@
             background: var(--text-color);
             color: var(--bg-color);
             cursor: pointer;
+            padding: 9px;
         }
 
         .col-2{
@@ -155,7 +156,6 @@
             padding: 5px;
             margin-top: 20px;
             display: block;
-            gap: 10px;
         }
 
         .cart-quantitys{
@@ -174,10 +174,20 @@
         .ga{
             color: #ff523b;
             margin-left: 10px;
+            cursor: none;
         }
 
         .small-img-row{
             display: flex;
+            gap: 5px;
+        }
+
+        .smalls{
+            padding: 0;
+        }
+
+        .smalls:hover{
+            border: 2px solid brown;
         }
 
        
@@ -191,26 +201,27 @@
 <br>
         <div class="small-img-row">
             <div class="small-img-col">
-                <img style="padding: 0;" width='100%' height='100px' class="small-img" src="{{ ProductDetail.image.url }}"/>
+                <img class="smalls" width='100%' height='100px' class="small-img" src="{{ ProductDetail.image1.url }}"/>
             </div>
             <div class="small-img-col">
-                <img style="padding: 0;" width='100%' height='100px' class="small-img" src="{{ ProductDetail.image.url }}"/>
+                <img class="smalls" width='100%' height='100px' class="small-img" src="{{ ProductDetail.image2.url }}"/>
             </div>
             <div class="small-img-col">
-                <img style="padding: 0;" width='100%' height='100px' class="small-img" src="{{ ProductDetail.image.url }}"/>
+                <img class="smalls" width='100%' height='100px' class="small-img" src="{{ ProductDetail.image3.url }}"/>
             </div>
             <div class="small-img-col">
-                <img style="padding: 0;" width='100%' height='100px' class="small-img" src="{{ ProductDetail.image.url }}"/>
+                <img class="smalls" width='100%' height='100px' class="small-img" src="{{ ProductDetail.image4.url }}"/>
             </div>
         </div>
     </div>
     <div class='col-2'>
         <p>Home / Video</p>
-        <h1>gggggggggggg</h1>
+        <h1>ZOM 100</h1>
+        <br>
         <h4>$57.2</h4>
         <Select>
             <option value="">Timer</option>
-            <option value="">Tralar</option>
+            <option value="">Trailar</option>
             <option value="">Full Video</option>
             <option value="">Shot Video</option>
         </Select>
@@ -221,7 +232,7 @@
         <br>
         <h3>Product Details <i class="fa fa-indent ga"></i></h3>
         <br>
-        <p>When you visit our website,<br> our web server temporarily stores <br>each access in a log file. <br>The following data i</p>
+        <p>Bullied by his boss,<br>worked around the clock, he's nothing more <br>than a corporatedrone. <br>All it takes is a zombie outbreak <br>for him to finally feel alive!</p>
     </div>
 </div>
 </section>
@@ -232,7 +243,7 @@
 <div class="shop container">
     <div class="row-2">
         <h2>Related Videos</h2>
-        <p style="color: white"><a href="">View More</a></p>
+        <p style="color: white"><a href="/product_list">View More</a></p>
     </div>
 </div>
 <section class="shop container">
