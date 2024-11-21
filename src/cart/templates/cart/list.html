@@ -73,6 +73,28 @@
             display: none;
            } 
         }
+
+        .add{
+            display: flex;
+            justify-content: flex-end;
+            cursor: pointer;
+        }
+
+        .add h1{
+            border: 3px solid #ff523b;
+            width: 100%;
+            text-align: center;
+            max-width: 310px;
+            font-size: 25px;
+            background-color: #ff523b;
+           
+        }
+
+        .add h1 a{
+            text-decoration: none
+        }
+
+        
     </style>
 </head>
 <body>
@@ -116,15 +138,20 @@
                 </tr>
                 <tr>
                     <td>Tax</td>
-                    <td>${{ taxs }}</td>
+                    <td>$9</td>
                 </tr>
                 <tr>
                     <td>Total</td>
-                    <td>${{ Total_costs }}</td>
+                    <td>${{ totall }}</td>
                 </tr>
+                
             </table>
+            
         </div>
-
+        
+        <div class="add">
+           <h1><a href="/ShowCheckOut">Checkout</a></h1>
+        </div>
 
     </div>
     {% comment %} <div class="cart">

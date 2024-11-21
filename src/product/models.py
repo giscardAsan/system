@@ -9,12 +9,14 @@ class Product(models.Model):
     image3 = models.ImageField(null=True, upload_to="ProductImages")
     image4 = models.ImageField(null=True, upload_to="ProductImages")
     quantity = models.IntegerField()
-    code = models.CharField(max_length=10)
+    code = models.CharField(max_length=200)
     price = models.FloatField()
     description = models.TextField(max_length=250)
     cancel_price = models.FloatField(null=True)
     date_added = models.DateTimeField(auto_now_add=True)
-    tax = models.FloatField(null=True)
+    brand = models.CharField(max_length=255, null=True)
+    
+    
     
     
 

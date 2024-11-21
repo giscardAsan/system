@@ -1,5 +1,7 @@
 from django.shortcuts import render
 
+from product.models import Product
+
 
 
 def main(request):
@@ -42,3 +44,16 @@ def talent(request):
 
 def policy(request):
    return render(request, 'policy.html')
+
+def search_value(request):
+   if request.method == "POST":
+      search = request.POST['search']
+      venues = Product.objects.filter(name=search)
+      venues = Product.objects.filter(name=search)
+      
+      return render(request, "search_value.html", {
+         'search':search,
+         'venues':venues
+         })
+   else:
+      return render(request, 'search_value.html', {})

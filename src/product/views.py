@@ -53,11 +53,31 @@ def product_list(request):
         return render(request, "product/product_list.html", {'phone': phones})
     
     
+def search_value(request):
+    phones = Product.objects.all()
+    # laptop = Product.objects.filter(name="laptop")
+    # Tv = Product.objects.filter(name="Tv")
+    # context = {"Phone": phones, "Laptop": laptop, "Tv": Tv}
+    # return render(request, "product/product_list.html", {'phone': phones})
+
+    if request.user.is_authenticated:
+        search = request.POST['search']
+        products = Product.objects.filter(name__contains=search).count()
+        request.session['cart'] = products
+        request.session.modified = True
+        return render(request, "product/search_value.html", {'products': products})
+    else:
+
+        request.session['cart'] = 0
+        return render(request, "product/search_value.html", {'products': products})
+    
+    
 def Product_Detail(request, product_id):
     ProductDetails = Product.objects.get(id = product_id)
+    
     # relatedproduct = Product.objects.filter( related=ProductDetails.related).get()
     
-    relatedProduct = Product.objects.raw('SELECT * FROM product_product WHERE  brand  LIKE  %s limit 5', [ProductDetails.brand])
+    relatedProduct = Product.objects.raw('SELECT * FROM product_product WHERE  brand  LIKE  %s limit 4', [ProductDetails.brand])
     
     return render(request, "product/Product_Detail.html", {
         

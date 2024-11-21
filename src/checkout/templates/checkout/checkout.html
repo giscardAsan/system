@@ -1,0 +1,83 @@
+<!doctype html>
+{% load static %}
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.84.0">
+    <title>Checkout Page</title>
+ 
+  </head>
+  <body>
+
+<div class="container">
+  <main>
+
+    <div class="row g-5">
+      <div class="col-md-5 col-lg-4 order-md-last">
+        <h4 class="d-flex justify-content-between align-items-center mb-3">
+          <span class="text-primary">Your cart</span>
+          <span class="badge bg-primary rounded-pill">3</span>
+        </h4>
+        <ul class="list-group mb-3">
+
+          {% for cart in cart %}
+          <li class="list-group-item d-flex justify-content-between lh-sm">
+            <div>
+              <h6 class="my-0">{{cart.product.name}}</h6>
+              <img src="{{cart.product.image.url}}" width="15%">
+            </div>
+            <span class="text-muted">${{cart.product.price}}</span>
+          </li>
+          {% endfor %}
+         
+          
+          <li class="list-group-item d-flex justify-content-between bg-light">
+            <div class="text-success">
+              <h6 class="my-0">Promo code</h6>
+              <small>EXAMPLECODE</small>
+            </div>
+            <span class="text-success">−$5</span>
+          </li>
+          <li class="list-group-item d-flex justify-content-between">
+            <span>Total (USD)</span>
+       
+        <strong>{{totall}}</strong>
+          </li>
+        </ul>
+
+        <form class="card p-2" action="">
+          <div class="input-group">
+            <input type="text" class="form-control" placeholder="Promo code" value="">
+            <button type="submit" class="btn btn-secondary">Redeem</button>
+          </div>
+        </form>
+      </div>
+      <div class="col-md-7 col-lg-8">
+        <h4 class="mb-3">Billing address</h4>
+
+
+
+        <form method="post">
+          {% csrf_token %}
+            {{form.as_p}}
+          <hr class="my-4">
+           <button class="w-100 btn btn-primary btn-lg" type="submit">Place Order</button>
+        </form>
+
+      </div>
+    </div>
+  </main>
+</div>
+
+
+<br>
+<br>
+<br>
+<br>
+
+  </body>
+</html>
