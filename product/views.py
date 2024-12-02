@@ -71,7 +71,7 @@ def Product_Detail(request, product_id):
     
     # relatedproduct = Product.objects.filter( related=ProductDetails.related).get()
     
-    relatedProduct = Product.objects.raw('SELECT * FROM product_product WHERE  brand  LIKE  %s limit 4', [ProductDetails.brand])
+    relatedProduct = Product.objects.raw('SELECT * FROM product_product WHERE  brand  LIKE  %s limit 5', [ProductDetails.brand])
     
     return render(request, "product/Product_Detail.html", {
         

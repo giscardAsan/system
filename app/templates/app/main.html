@@ -1,9 +1,9 @@
-{% extends 'layout.html' %}
+{% extends 'app/layout.html' %}
 {% load static %}
 
 
 {% block title %}
-     HOME
+    MAIN HOME
 {% endblock %}
 
 
@@ -22,9 +22,9 @@
     {% endif %} 
     </div>
     <p>Movies move us like nothing else can, <br>whether they're scary, funny, dramatic, romantic or anywhere in-between. <br>so many titles, so much to experience.</p>
+    <br>
     <div>
-  <p>{{key}}</p>
-        <p style="color: white">{{request.user }}</p>
+        <p style="color: white">{{key}}{{request.user }}</p>
     </div>
 </div>
 <br>
