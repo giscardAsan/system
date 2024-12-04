@@ -1,4 +1,5 @@
 <!doctype html>
+{% extends "app/layout.html" %}
 {% load static %}
 <html lang="en">
 
@@ -13,6 +14,7 @@
   </head>
   <body>
 
+{% block content%}
 <div class="container">
   <main>
 
@@ -78,6 +80,168 @@
 <br>
 <br>
 <br>
+<style>
+.checkoutLayout{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.checkoutLayout .right{
+  background-color: #5358b3;
+  border-radius: 20px;
+  padding: 20px;
+  color: #fff;
+}
+
+.checkoutLayout .listt img{
+  height: 70px;
+}
+
+.checkoutLayout .right .formm{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  border-button: 1px solid #7a7fe2;
+  padding-button: 20px;
+}
+
+.checkoutLayout .formm .group:nth-child(-n+3){
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+
+.checkoutLayout .formm input, .checkoutLayout .formm select{
+  width: 100%;
+  padding: 10px 20px;
+  box-sizing: border-box;
+  border-radius: 20px;
+  margin-top: 10px;
+  border: none;
+  background-color: #6a6fce;
+  color: #fff;
+}
+
+.checkoutLayout .roww{
+  display: flex;
+  justify-content: space-between;
+  align-item: center;
+  margin-top: 10px;
+}
+
+.checkoutLayout .roww div:nth child(2){
+  font-weight: bold;
+  font-size: x-large;
+}
+
+.buttonCheckout{
+  width: 100%;
+  height: 40px;
+  boder: none;
+  border-radius: 20px;
+  margin-top: 20px;
+  font-weight: bold;
+  color: #fff;
+  background-color: #49d8b9;
+}
+
+.returnCart h1{
+  border-top: 1px solid #eee;
+  padding: 20px 0;
+}
+
+.returnCart .listt .item img{
+  height: 80px;
+}
+
+.returnCart .item{
+  display: flex;
+  align-items: center;
+  gap: 60px;
+  margin-button: 30px;
+  padding: 0 10px;
+  box-shadow: 0 10px 20px #555;
+  border-radius: 20px;
+}
+
+.returnCart .item .names, .returnCart .item returnPrice{
+  font-size: x-large;
+  font-weight: bold;
+}
+</style>
+<div class="cont">
+  <div class="checkoutLayout">
+    <div class="returnCart">
+      <a href="/">Keep Showping</a>
+      <h1>List Product In Cart</h1>
+      <div class="listt">
+        <div class="item">
+        <img src="{% static 'imagefolder/nextwatch/AAAABdu1-UYxGUcKaJQvBIK-UbhVMfWVgtn8cr-DwVqmFGYeFMB2NmaGKdg_QJsUPkl_LMv0rRz9zeBTdMqQORGivSxA8L7RrVFqIlXrLsq_AIy-nQmyHLwoApozP___vEh2xzzJ.jpg' %}" alt="">
+        <div class="infoo">
+          <div class="names">product 1</div>
+          <div class="price">$22/1 product</div>
+        </div>
+        <div class="Quantity">1</div>
+        <div class="returnPrice">$50</div>
+        </div>
+      </div>
+      <br>
+      <form class="card p-2" action="">
+        <div class="input-group">
+          <input type="text" class="form-control" placeholder="Promo code" value="">
+          <button type="submit" class="btn btn-secondary">Redeem</button>
+        </div>
+      </form>
+    </div>
+      <div class="right">
+        <h1>CHECKOUT</h1>
+        <div class="formm">
+          <div class="group">
+            <label for="">Full Name</label>
+            <input type="text" name="" id="">
+          </div>
+          <div class="group">
+            <label for="">Phone</label>
+            <input type="text" name="" id="">
+          </div>
+          <div class="group">
+            <label for="">Address</label>
+            <input type="text" name="" id="">
+          </div>
+          <div class="group">
+            <label for="">Contact</label>
+            <select name="" id="">
+              <option value="">Choose..</option>
+              <option value="london">london</option>
+            </select>
+          </div>
+          <div class="group">
+            <label for="">City</label>
+            <select name="" id="">
+              <option value="">Choose..</option>
+              <option value="london">london</option>
+            </select>
+          </div>
+        </div>
+        <div class="return">
+          <div class="roww">
+            <div>Total Quantity</div>
+            <div class="totalQuantity">60</div>
+          </div>
+          <div class="roww">
+            <div>Total Price</div>
+            <div class="totalPrice">60</div>
+          </div>
+        </div>
+        <button class="buttonCheckout">
+          CHECKOUT
+        </button>
+    </div>
+  </div>
+</div>
+
+{% endblock%}
 
   </body>
 </html>
