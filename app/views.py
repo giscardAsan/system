@@ -10,46 +10,46 @@ from verify_email.email_handler import send_verification_email
 
 
 
-def main(request):
-    context = {"key": "Your welcome! "}
-    return render(request, 'app/main.html', context)
+# def main(request):
+#     context = {"key": "Your welcome! "}
+#     return render(request, 'app/main.html', context)
 
-def watch(request):
-    return render(request, 'app/next.html')
+# def watch(request):
+#     return render(request, 'app/next.html')
 
-def backend(request):
-   return render(request, 'app/backend1-1.html')
+# def backend(request):
+#    return render(request, 'app/backend1-1.html')
 
-def new(request):
-   return render(request, 'app/new.html')
+# def new(request):
+#    return render(request, 'app/new.html')
 
-def africa(request):
-    return render(request, 'app/africa.html')
+# def africa(request):
+#     return render(request, 'app/africa.html')
  
-def comedy(request):
-   return render(request, 'app/comedy.html')
+# def comedy(request):
+#    return render(request, 'app/comedy.html')
 
-def home(request):
-    return render(request, 'app/home.html')
+# def home(request):
+#     return render(request, 'app/home.html')
 
-def about(request):
-    return render(request, 'app/about.html')
+# def about(request):
+#     return render(request, 'app/about.html')
  
-def new(request):
-   return render(request, 'app/new.html')
+# def new(request):
+#    return render(request, 'app/new.html')
  
-def backend(request):
-   return render(request, 'app/backend1-1.html')
+# def backend(request):
+#    return render(request, 'app/backend1-1.html')
 
-def upcoming(request):
-   return render(request, 'app/upcoming.html')
+# def upcoming(request):
+#    return render(request, 'app/upcoming.html')
 
-def talent(request):
-   return render(request, 'app/talent.html')
+# def talent(request):
+#    return render(request, 'app/talent.html')
 
 
-def policy(request):
-   return render(request, 'app/policy.html')
+# def policy(request):
+#    return render(request, 'app/policy.html')
 
 def index(request):
     context = {"key": "I am at Home "}

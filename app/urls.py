@@ -22,16 +22,16 @@ urlpatterns = [
      path('login/', RedirectView.as_view(url='/admin'), name='login'),
      
      path('main/', views.main, name='main'),
-     path('watch/', views.watch, name='watch'),
-     path('backend/', views.backend, name="endd"),
-     path('new/', views.new),
-     path('talent/', views.talent),
-     path('policy/', views.policy),
-     path('backend/', views.backend, name="endd"),
-     path('about/', views.about),
-     path('comedy/', views.comedy, name="comedy"),
-     path('africa/', views.africa, name="africa"),
-     path('upcoming/', views.upcoming),
+     # path('watch/', views.watch, name='watch'),
+     # path('backend/', views.backend, name="endd"),
+     # path('new/', views.new),
+     # path('talent/', views.talent),
+     # path('policy/', views.policy),
+     # path('backend/', views.backend, name="endd"),
+     # path('about/', views.about),
+     # path('comedy/', views.comedy, name="comedy"),
+     # path('africa/', views.africa, name="africa"),
+     # path('upcoming/', views.upcoming),
 ]
 
 
