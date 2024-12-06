@@ -15,7 +15,10 @@
   <body>
 
 {% block content%}
-<div class="container">
+<br>
+<br>
+<br>
+{% comment %} <div class="container">
   <main>
 
     <div class="row g-5">
@@ -36,7 +39,7 @@
           </li>
           {% endfor %}
          
-          
+
           <li class="list-group-item d-flex justify-content-between bg-light">
             <div class="text-success">
               <h6 class="my-0">Promo code</h6>
@@ -73,7 +76,7 @@
       </div>
     </div>
   </main>
-</div>
+</div> {% endcomment %}
 
 
 <br>
@@ -81,6 +84,9 @@
 <br>
 <br>
 <style>
+body{
+  background: white;
+}
 .checkoutLayout{
   display: flex;
   flex-wrap: wrap;
@@ -91,7 +97,7 @@
 .checkoutLayout .right{
   background-color: #5358b3;
   border-radius: 20px;
-  padding: 20px;
+  padding: 10px;
   color: #fff;
 }
 
@@ -101,23 +107,22 @@
 
 .checkoutLayout .right .formm{
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 15px;
   border-button: 1px solid #7a7fe2;
   padding-button: 20px;
 }
 
-.checkoutLayout .formm .group:nth-child(-n+3){
+.checkoutLayout .formm .group:nth-child(-n+5){
   grid-column-start: 1;
   grid-column-end: 3;
 }
 
 .checkoutLayout .formm input, .checkoutLayout .formm select{
   width: 100%;
-  padding: 10px 20px;
+  padding: 10px 30px;
   box-sizing: border-box;
   border-radius: 20px;
-  margin-top: 10px;
   border: none;
   background-color: #6a6fce;
   color: #fff;
@@ -148,77 +153,93 @@
 
 .returnCart h1{
   border-top: 1px solid #eee;
-  padding: 20px 0;
 }
 
 .returnCart .listt .item img{
-  height: 80px;
 }
 
 .returnCart .item{
   display: flex;
   align-items: center;
-  gap: 60px;
+  gap: 45px;
   margin-button: 30px;
   padding: 0 10px;
   box-shadow: 0 10px 20px #555;
   border-radius: 20px;
 }
 
-.returnCart .item .names, .returnCart .item returnPrice{
+.returnCart .item .names, 
+.returnCart .item returnPrice{
   font-size: x-large;
   font-weight: bold;
 }
-</style>
+.returnCart a{
+  color:black;
+  font-size: 20px;
+}
+
+.returnCart a:hover{
+  color: #ca9f13,
+}
+
+</style>  
 <div class="cont">
   <div class="checkoutLayout">
     <div class="returnCart">
-      <a href="/">Keep Showping</a>
+      <a href="/product_list">Keep Showping</a>
       <h1>List Product In Cart</h1>
+      {% for cart in cart %}
       <div class="listt">
         <div class="item">
-        <img src="{% static 'imagefolder/nextwatch/AAAABdu1-UYxGUcKaJQvBIK-UbhVMfWVgtn8cr-DwVqmFGYeFMB2NmaGKdg_QJsUPkl_LMv0rRz9zeBTdMqQORGivSxA8L7RrVFqIlXrLsq_AIy-nQmyHLwoApozP___vEh2xzzJ.jpg' %}" alt="">
+          <img src="{{cart.product.image.url}}">
         <div class="infoo">
-          <div class="names">product 1</div>
-          <div class="price">$22/1 product</div>
+          <div class="names">{{cart.product.name}}</div>
+          <a href="/Delete_Cart/{{cart.product.id}}" style="color: red; font-size: 17px">Remove</a>
+          </div>
+        <div class="Quantity">{{ cart.quantity}}</div>
+        <div class="returnPrice">${{cart.product.price}}</div>
         </div>
-        <div class="Quantity">1</div>
-        <div class="returnPrice">$50</div>
-        </div>
+        <br>
       </div>
-      <br>
-      <form class="card p-2" action="">
-        <div class="input-group">
-          <input type="text" class="form-control" placeholder="Promo code" value="">
-          <button type="submit" class="btn btn-secondary">Redeem</button>
-        </div>
-      </form>
+      {% endfor %}
+      
     </div>
       <div class="right">
-        <h1>CHECKOUT</h1>
+        <h1>Billing address</h1>
         <div class="formm">
           <div class="group">
-            <label for="">Full Name</label>
-            <input type="text" name="" id="">
+            <form method="post">
+              <input type="hidden" name="csrfmiddlewaretoken" value="qW55nYIVxyMgiMZAtSa0ssKYSnabEncQVmxDcsZrfna96pmksQKikcPH0r1SBHia">
+              <label for="id_email">Email:</label>
+              <input type="email" name="email" maxlength="250" required id="id_email">
           </div>
           <div class="group">
-            <label for="">Phone</label>
-            <input type="text" name="" id="">
+            <label for="id_first_name">First name:</label>
+    <input type="text" name="first_name" maxlength="250" required id="id_first_name">
           </div>
           <div class="group">
-            <label for="">Address</label>
-            <input type="text" name="" id="">
+            <label for="id_surname">Surname:</label>
+    <input type="text" name="surname" maxlength="250" required id="id_surname">
+    
           </div>
           <div class="group">
-            <label for="">Contact</label>
-            <select name="" id="">
+            <label for="id_last_name">Last name:</label>
+            <input type="text" name="last_name" maxlength="250" required id="id_last_name">
+          </div>
+          <div class="group">
+            <label for="id_address">Address:</label>
+            <input type="text" name="address" maxlength="250" required id="id_address">
+         </div>
+          <div class="group">
+            <label for="id_county">County</label>
+            <select name="" required id="id_county">
               <option value="">Choose..</option>
               <option value="london">london</option>
             </select>
           </div>
           <div class="group">
-            <label for="">City</label>
-            <select name="" id="">
+            <label for="id_city">City</label>
+            <select name="" required id="id_city">
               <option value="">Choose..</option>
               <option value="london">london</option>
             </select>
@@ -227,20 +248,25 @@
         <div class="return">
           <div class="roww">
             <div>Total Quantity</div>
-            <div class="totalQuantity">60</div>
+            <div class="totalQuantity">{{ request.session.cart }}</div>
           </div>
           <div class="roww">
             <div>Total Price</div>
-            <div class="totalPrice">60</div>
+            <div class="totalPrice">{{totall}}</div>
           </div>
         </div>
-        <button class="buttonCheckout">
-          CHECKOUT
+        <button class="buttonCheckout" type="submit">
+          Place Order
         </button>
+      </form>
     </div>
   </div>
 </div>
-
+<br>
+<br>
+<br>
+<br>
+<br>
 {% endblock%}
 
   </body>

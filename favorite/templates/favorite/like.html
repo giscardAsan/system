@@ -119,11 +119,15 @@
                             <small>Price: ${{ favorite.product.price}}</small>
                             <br>
                             <a href="/Delete_favorite/{{favorite.product.id}}">Remove</a>
+
                         </div>
+                        
                     </div>
                     <br>
                     <a href="/add-cart/{{ favorite.product.id}}"><button type="button" class="add-cartt">Add Cart</button></a>
-                
+                    <td>
+                    <label for="" class="cart-quantity">{{ favorite.quantity}}</label>
+                    </td>
                 <td>${{favorite.Total_cost }}</td>
             </td>
             </tr>
