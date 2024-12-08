@@ -242,7 +242,7 @@
 <div class="shop container">
     <div class="row-2">
         <h2>Related </h2>
-        <p style="color: white"><a href="/product_list">View More</a></p>
+        <p><a href="/product_list" style="color: white">View More</a></p>
     </div>
 </div>
 
@@ -262,14 +262,14 @@
                 <i class="fa-solid fa-star"></i>
             </p>
             <br>
-            <a href="/add-favorite/{{ product.id}}"><i style="color: #ff523b; font-size: 20px" class="fa-solid fa-bookmark"></i></a>
+            <a href="/add-favorite/{{ ProductDetail.id }}"><i style="color: #ff523b; font-size: 20px" class="fa-solid fa-bookmark"></i></a>
     
             <div class="flex">
                 <p class="description"><b>{{ data.date_added}}</b></p>
                 <p style="text-decoration:line-through"><b><del>$ {{ data.cancel_price }}</del></b></p>
                 <span class="price">$ {{ data.price }}</span>
             </div>
-            <a href="/add-cart/{{ product.id }}"><button type="button" class="add-cart">Add Cart</button></a>
+            <a href="/add-cart/{{ ProductDetail.id }}"><button type="button" class="add-cart">Add Cart</button></a>
     </a>
         </div>
 {% endfor %}
