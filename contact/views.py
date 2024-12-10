@@ -12,8 +12,8 @@ def action(request):
 def crime(request):
     return render(request, 'contact/crime.html')
 
-def document(request):
-    return render(request, 'contact/document.html')
+def documentary(request):
+    return render(request, 'contact/documentary.html')
 
 def drama(request):
     return render(request, 'contact/drama.html')
@@ -27,11 +27,11 @@ def horror(request):
 def kids(request):
     return render(request, 'contact/kids.html')
 
-def recommend(request):
-    return render(request, 'contact/recommend.html')
+def recommended(request):
+    return render(request, 'contact/recommended.html')
 
 def romantic(request):
     return render(request, 'contact/romantic.html')
 
-def tv_show(request):
-    return render(request, 'contact/tv_show.html')
+def tv_shows(request):
+    return render(request, 'contact/tv_shows.html')

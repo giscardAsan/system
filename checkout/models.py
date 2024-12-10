@@ -13,7 +13,6 @@ class Checkout(models.Model):
     surname = models.CharField(max_length=250)
     last_name = models.CharField(max_length=250)
     address = models.CharField(max_length=250)
-    shipping = models.FloatField()
     door_to_door_fee = models.FloatField()
     price = models.FloatField()
     

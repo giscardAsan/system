@@ -4,7 +4,7 @@
 
 <header>
     <input type="checkbox" name="" id="chki">
-    <div class="logo"><h1><img src="{% static 'imagefolder/images/Screenshot.png' %}" width="90px" alt=""></h1></div>
+    <div class="logo"><h1><a href="/main"><img src="{% static 'imagefolder/images/Screenshot.png' %}" width="90px" alt=""></a></h1></div>
     <div class="search-box">
         <form method="POST" action="{% url 'search-venues' %}">
         {% csrf_token %}
@@ -20,7 +20,7 @@
         <li><a href="/contact">CONTACT</a></li>
         <li>
             <a href="{% url 'Show_Favorite' %}"><i class="fa-regular fa-heart id="cart-icon"">{{ request.session.favorite}}</i></a>
-            <a href="{% url 'Show_Cart' %}"><i class="fa-solid fa-lock" id="cart-icon">{{ request.session.cart }}</i></a>           
+            <a href="{% url 'Show_Cart' %}"><i class="fa-solid fa-cart-shopping" id="cart-icon">{{ request.session.cart }}</i></a>           
         </li>
         <a><img width="22px" style="border-radius: 1rem;" src="{% static 'imagefolder/icons/icon (21).webp' %}" onclick="toggleMenu()"/></a>
        
@@ -34,12 +34,12 @@
         </div>
         <hr>
         <br>
-        <a href="" class="sub-menu-link">
+        <a href="#" class="sub-menu-link">
             <i style="color: #000;" class="fa-solid fa-user"></i>
             <p>Edit Profile</p>
             <span>></span>
         </a>
-        <a href="" class="sub-menu-link">
+        <a href="#" class="sub-menu-link">
             <i style="color: #000;" class="fa-solid fa-gear"></i>
             <p>Settings & Privacy</p>
             <span>></span>

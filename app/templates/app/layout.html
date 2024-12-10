@@ -23,11 +23,22 @@
 </head>
 <body>
     {% include 'app/header.html' %}
-   
+    <style>
+        Body{
+            background-image: url('{% static 'imagefolder/images/image_3.jpg' %}');
+            background-size: cover;
+            height: 100vh;
+            background-position: center;
+            color: rgb(245, 248, 252);
+            background-attachment: fixed;
+            
+        }
+    </style>
 
 
 
     {% block content %}
+    
     
     
     {% endblock %}

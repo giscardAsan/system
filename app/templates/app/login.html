@@ -6,7 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>login</title>
 </head>
-<body style="background-image: url('{% static 'imagefolder/images/rawuf.png' %}');">
+<style>
+  Body{
+      background-image: url('{% static 'imagefolder/images/image_3.jpg' %}');
+      background-size: cover;
+      height: 100vh;
+      background-position: center;
+      color: rgb(245, 248, 252);
+      background-attachment: fixed;
+      
+  }
+</style>
 <div class="manyy">
     <a style="color: white" href="{% url 'request-new-link-from-email' %}">Get a new verification link</a>
 </div>
@@ -178,7 +188,7 @@
         <P>Dont  have an account? <a href="{% url 'register' %}">Register</a></P>
       </div>
       <div class="register">
-        <P>Dont  have an account? <a href="{% url 'password_reset' %}">password_reset</a></P>
+        <P>Change Password? <a href="{% url 'password_reset' %}">password_reset</a></P>
       </div>
       </form>
       <br>

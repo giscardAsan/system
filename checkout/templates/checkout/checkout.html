@@ -84,9 +84,6 @@
 <br>
 <br>
 <style>
-body{
-  background: white;
-}
 .checkoutLayout{
   display: flex;
   flex-wrap: wrap;
@@ -197,7 +194,7 @@ body{
           <a href="/Delete_Cart/{{cart.product.id}}" style="color: red; font-size: 17px">Remove</a>
           </div>
         <div class="Quantity">{{ cart.quantity}}</div>
-        <div class="returnPrice">${{cart.product.price}}</div>
+        <div class="returnPrice">${{cart.Total_cost }}</div>
         </div>
         <br>
       </div>
@@ -205,11 +202,11 @@ body{
       
     </div>
       <div class="right">
-        <h1>Billing address</h1>
+        <h1>Billing / address</h1>
         <div class="formm">
           <div class="group">
-            <form method="post">
-              <input type="hidden" name="csrfmiddlewaretoken" value="qW55nYIVxyMgiMZAtSa0ssKYSnabEncQVmxDcsZrfna96pmksQKikcPH0r1SBHia">
+            <form method="POST">
+              {% csrf_token %}
               <label for="id_email">Email:</label>
               <input type="email" name="email" maxlength="250" required id="id_email">
           </div>
@@ -234,14 +231,14 @@ body{
             <label for="id_county">County</label>
             <select name="" required id="id_county">
               <option value="">Choose..</option>
-              <option value="london">london</option>
+              <option value="london">Ghana</option>
             </select>
           </div>
           <div class="group">
             <label for="id_city">City</label>
             <select name="" required id="id_city">
               <option value="">Choose..</option>
-              <option value="london">london</option>
+              <option value="london">Kumasi</option>
             </select>
           </div>
         </div>

@@ -11,7 +11,7 @@ from verify_email.email_handler import send_verification_email
 
 
 def main(request):
-    context = {"key": "Your welcome! "}
+    context = {"key": "Welcome! "}
     return render(request, 'app/main.html', context)
 
 def watch(request):
