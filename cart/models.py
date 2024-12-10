@@ -19,7 +19,7 @@ class Cart(models.Model):
         return self.quantity * self.product.price 
     
     def Total_costs(self):
-        return self.product.price + 9 
+        return self.quantity * self.product.price + 9
     
     def Twelve(self):
         if request.POST['mode'] <= 12:
