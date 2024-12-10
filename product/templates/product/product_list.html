@@ -120,9 +120,9 @@
             <a href="/add-favorite/{{ product.id}}"><i style="color: #ff523b; font-size: 20px" class="fa-solid fa-bookmark"></i></a>
     
             <div class="flex">
-                <p class="description" style="color: black; font-size: 20px"><b>{{ product.date_added}}</b></p>
-                <p style="text-decoration:line-through"><b><del style="color: black; font-size: 20px">$ {{ product.cancel_price}}</del></b></p>
-                <span class="price" style="color: black; font-size: 20px">$ {{ product.price}}</span>
+                <p class="description" style="color: black;"><b>{{ product.date_added}}</b></p>
+                <p style="text-decoration:line-through"><b><del style="color: black;">$ {{ product.cancel_price}}</del></b></p>
+                <span class="price" style="color: black;">$ {{ product.price}}</span>
             </div>
             <a href="/add-cart/{{ product.id}}"><button type="button" class="add-cart">Add Cart</button></a>
       </a>

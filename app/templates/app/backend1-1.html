@@ -10,43 +10,392 @@
 
 {% block content %}
 <br>
+ <br>
+ <br>
+ <br>
+<style>
+    
+
+    /*BackEnd*/
+
+   
+    
+    
+    
+    .sectionn {
+       overflow: hidden;
+    }
+    
+    
+    
+    .sectionn .heroo-container {
+       display: flex;
+       flex-direction: row;
+       position: relative;
+    }
+    
+    .sectionn .infoo-container {
+       width: 35%;
+       z-index: 2
+    }
+    
+    
+    
+    
+    
+    
+    
+   
+    
+    .sectionn .heroo-image {
+       background-position: 0%;
+       background-repeat: no-repeat;
+       background-size: contain;
+       height: 150%;
+       justify-content:center;
+       position: absolute;
+       width: 100%
+    }
+    
+    
+    
+    .sectionn .heroo-image.heroo-image-desktop {
+       display: block!important
+    }
+    
+    .sectionn .heroo-image.heroo-image-mobile {
+       display: none
+    }
+    
+    .sectionn .detailss-container {
+       margin: 40px 0 0
+    }
+    
+    .sectionn .detailss-container .title-infoo {
+       margin-bottom: 22px
+    }
+    
+    @media only screen and (min-width: 599px) {
+       .ab-46106-2 .sectionn .detailss-container {
+           margin:40px 0 56px
+       }
+    }
+    
+    .sectionn .title-infoo-metadata-wrapper {
+       margin-top: 16px
+    }
+    
+    .sectionn .title-infoo-metadata-item {
+       color: #a3a3a3;
+       font-size: 14px;
+       font-weight: 400;
+       line-height: 18px;
+       position: relative
+    }
+    
+    .sectionn .title-infoo-synopsis,.sectionn .title-infoo-talent {
+       padding-top: 20px
+    }
+    
+    .sectionn .title-data-infoo-item-label {
+       color: #a3a3a3
+    }
+    
+    @media only screen and (max-width: 599px) {
+       .sectionn .detailss-container {
+       }
+    
+       .sectionn .detailss-container .title-infoo {
+           margin-bottom: 30px
+       }
+    
+       .sectionn .heroo-container {
+           flex-direction: column-reverse
+       }
+    
+       
+    
+       .sectionn .heroo-image {
+           height: 100%;
+           left: vw;
+           width: 152% 
+       }
+    
+       .sectionn .heroo-image.heroo-image-mobile {
+           display: block!important
+       }
+    
+       .sectionn .heroo-image.heroo-image-desktop {
+           display: none
+       }
+    
+       .sectionn .infoo-container {
+           margin-top: -7px;
+           min-width: auto;
+           padding-top: 0;
+           width: inherit
+       }
+    
+       .sectionn .infoo-container:after {
+           background: none
+       }
+    
+       .sectionn .logo {
+           max-width: 500px;
+           width: 100%
+       }
+    }
+    
+    #section-hook {
+       background: none;
+       text-align: center;
+       top: -5px;
+       z-index: 5
+    }
+    
+    @media only screen and (max-width: 599px) {
+       #section-hook {
+           text-align:left
+       }
+    }
+    
+    .hook-hr {
+       background: linear-gradient(90deg,#777 0,rgba(51,51,51,.5) 50%,#777);
+       height: 1px
+    }
+    
+    @media only screen and (max-width: 599px) {
+       .hook-hr {
+           background:linear-gradient(90deg,rgba(51,51,51,.5) 0,#777);
+           height: 1px
+       }
+    }
+    
+    .hook-hr:first-of-type {
+       margin-bottom: 18px
+    }
+    
+    .hook-hr:last-of-type {
+       margin-top: 18px
+    }
+    
+    .hook-header,.hook-text {
+       margin: 0 auto;
+       max-width: 500px
+    }
+    
+    .hook-text {
+       color: #a3a3a3;
+       font-size: 16px;
+       font-weight: 400;
+       line-height: 22px
+    }
+    
+    @media only screen and (max-width: 1919px) {
+       #section-more-detailss .more-detailss-container-cast .more-detailss-item-container {
+           align-items:flex-start;
+           display: flex;
+           flex-flow: row wrap;
+           justify-content: space-evenly;
+           margin: -6px
+       }
+    }
+    
+    @media only screen and (max-width: 1439px) {
+       #section-more-detailss .more-detailss-container-cast .more-detailss-item-container {
+           align-items:flex-start;
+           display: flex;
+           flex-flow: row wrap;
+           justify-content: space-evenly;
+           margin: -6px
+       }
+    }
+    
+    #section-more-detailss .more-detailss-container-cast .more-detailss-item {
+       margin: 1px 6px;
+       max-width: 100%
+    }
+    
+    @media only screen and (max-width: 599px) {
+       #section-more-detailss .more-detailss-container-cast .more-detailss-item {
+           margin:0
+       }
+    }
+    
+    @supports (display: grid) {
+       #section-more-detailss .more-detailss-container-cast .more-detailss-item-container {
+           display:grid;
+           grid-template-columns: 20% 20% 20% 20% 20%
+       }
+    
+       @media only screen and (max-width: 1919px) {
+           #section-more-detailss .more-detailss-container-cast .more-detailss-item-container {
+               display:grid;
+               grid-template-columns: 25% 25% 25% 25%
+           }
+       }
+    
+       @media only screen and (max-width: 1439px) {
+           #section-more-detailss .more-detailss-container-cast .more-detailss-item-container {
+               display:grid;
+               grid-template-columns: 33.333% 33.333% 33.333%
+           }
+       }
+    
+       @media only screen and (max-width: 1023px) {
+           #section-more-detailss .more-detailss-container-cast .more-detailss-item-container {
+               display:grid;
+               grid-template-columns: 50% 50%
+           }
+       }
+    
+       @media only screen and (max-width: 599px) {
+           #section-more-detailss .more-detailss-container-cast .more-detailss-item-container {
+               display:grid;
+               grid-template-columns: 100%
+           }
+       }
+    }
+    
+    #section-more-detailss .more-detailss-label {
+       color: #a3a3a3;
+       font-size: 16px;
+       font-weight: 400;
+       line-height: 22px;
+       margin-bottom: 5px
+    }
+    
+    #section-more-detailss .more-detailss-item {
+       color: #fff;
+       display: inline-block;
+       font-size: 16px;
+       font-weight: 400;
+       line-height: 22px;
+       white-space: pre-wrap
+    }
+    
+    #section-more-detailss .cell-tudum a {
+       color: #fff
+    }
+    
+    #section-more-detailss .social-link {
+       color: #fff;
+       display: inline-block;
+       margin-right: 20px
+    }
+    
+    #section-more-detailss .social-link svg {
+       height: 30px;
+       pointer-events: none;
+       width: 30px
+    }
+    
+    @supports (display: grid) {
+       #section-more-detailss .more-detailss-container {
+           display:grid;
+           grid-template-columns: 20% 20% 20% 20% 20%
+       }
+    
+       @media only screen and (max-width: 1919px) {
+           #section-more-detailss .more-detailss-container {
+               display:grid;
+               grid-template-columns: 25% 25% 25% 25%
+           }
+       }
+    
+       @media only screen and (max-width: 1439px) {
+           #section-more-detailss .more-detailss-container {
+               display:grid;
+               grid-template-columns: 33.333% 33.333% 33.333%
+           }
+       }
+    
+       @media only screen and (max-width: 1023px) {
+           #section-more-detailss .more-detailss-container {
+               display:grid;
+               grid-template-columns: 50% 50%
+           }
+       }
+    
+       
+    
+       #section-more-detailss .more-detailss-cell {
+           margin: 6px;
+           max-width: 100%
+       }
+    
+       @media only screen and (max-width: 1919px) {
+           #section-more-detailss .more-detailss-cell {
+               margin:6px;
+               max-width: 100%
+           }
+       }
+    
+       @media only screen and (max-width: 1439px) {
+           #section-more-detailss .more-detailss-cell {
+               margin:6px;
+               max-width: 100%
+           }
+       }
+    
+       @media only screen and (max-width: 1023px) {
+           #section-more-detailss .more-detailss-cell {
+               margin:6px;
+               max-width: 100%
+           }
+       }
+    
+       @media only screen and (max-width: 599px) {
+           #section-more-detailss .more-detailss-cell {
+               max-width:100%
+           }
+       }
+    }
+    
+    
+    
+   
+</style>
+
+<br>
     <br>
     <br>
 <div id="appMountPoint">
-     <div class="basicLayout nonmemberTitle dark" lang="en-GH" dir="ltr">
+     <div class="basicLayout nonmemberTitle dark">
          <div class="css-16k8cq6 e1yb99j90">
      </div>
   
-     <section class="nmtitle-section section-hero" id="section-hero" data-uia="section-hero"><div class="hero-container" data-uia="hero-container">
-         <div class="info-container css-0">
+     <section class="nmtitle-section sectionn">
+        <div class="heroo-container">
+         <div class="infoo-container css-0">
             
              
-             <div class="details-container">
-                 <div class="title-info">
-                             <h1 class="title-title"><b>ANIKULAPO</b></h1>
-                             <div class="title-info-metadata-wrapper">
-                                 <span class="title-info-metadata-item item-year"> 2022 </span>
-                                 <span  class="info-spacer"> | </span>
-                                 <span class="title-info-metadata-item item-maturity">
+             <div class="detailss-container">
+                 <div class="title-infoo">
+                             <h1 class="title-title"><b>THE DEVIL WEARS PRADA</b></h1>
+                             <div class="title-infoo-metadata-wrapper">
+                                 <span class="title-infoo-metadata-item item-year"> 2022 </span>
+                                 <span  class="infoo-spacer"> | </span>
+                                 <span class="title-infoo-metadata-item item-maturity">
                                      <span class="maturity-rating">
                                          <span class="maturity-rating"><span class="screen-reader-text">Maturity Rating:</span>
                                          <span class="maturity-number"> 18+ </span>
                                      </span>
                                  </span>
-                                 <span  class="info-spacer"> | </span>
-                                 <span class="title-info-metadata-item item-runtime">
+                                 <span  class="infoo-spacer"> | </span>
+                                 <span class="title-infoo-metadata-item item-runtime">
                                      <span class="duration"> 2h 22m </span>
                                  </span>
-                                 <span  class="info-spacer"> | </span>
-                                 <a class="title-info-metadata-item item-genre" href=""> Drama </a>
+                                 <span  class="infoo-spacer"> | </span>
+                                 <a class="title-infoo-metadata-item item-genre" href=""> Drama </a>
                              </div>
-                         <div class="title-info-synopsis-talent">
-                             <div class="title-info-synopsis">Aftheter an affair with a queen leeds to his demise, an eager traveler encounters a mystical bird with  the poor to give himanother life.</div>
+                         <div class="title-infoo-synopsis-talent">
+                             <div class="title-infoo-synopsis">Aftheter an affair with a queen leeds to his demise, <br>an eager traveler encounters a mystical bird with  the <br>poor to give himanother life.</div>
 
-                             <div class="title-info-talent">
-                                 <div class="title-data-info-item item-starring">
-                                     <span class="title-data-info-item-label">Starring:</span>
-                                     <span class="title-data-info-item-list">Kunle Remi, Bimbo Ademoye, Hakeem Keakazim</span>
+                             <div class="title-infoo-talent">
+                                 <div class="title-data-infoo-item item-starring">
+                                     <span class="title-data-infoo-item-label">Starring:</span>
+                                     <span class="title-data-infoo-item-list">Kunle Remi, Bimbo Ademoye, Hakeem Keakazim</span>
                                  </div>
                              </div>
                          </div>
@@ -54,25 +403,26 @@
                  </div>
              </div>
 <style>
-    .hero-image-desktop{
+    .heroo-image-desktop{
         display: none;
-        background-image: url('{% static 'imagefolder/next/AAAABe8uGCtIJHwK52Q5e9o_BPwVjoeyzE_Bjpjww5_NKYlUzhFjTBkiGdMa15mgQBkL816lWJemjYCKB2tY-PJ-FWJiPhlBcgdma3tx.jpg' %}')
+        background-image: url('{% static 'imagefolder/comedy/comedy (2).jpg' %}')
     }
 
-    .hero-image-mobile{
+    .heroo-image-mobile{
         display: none;
-        background-image: url('{% static 'imagefolder/next/AAAABe8uGCtIJHwK52Q5e9o_BPwVjoeyzE_Bjpjww5_NKYlUzhFjTBkiGdMa15mgQBkL816lWJemjYCKB2tY-PJ-FWJiPhlBcgdma3tx.jpg' %}')
+        background-image: url('{% static 'imagefolder/comedy/comedy (2_2).jpg' %}')
     }
 </style>
-             <div class="hero-image-container css-16y7ok3">
-                 <div class="hero-image hero-image-desktop"></div>
+             <div class="heroo-image-container css-16y7ok3">
+                 <div class="heroo-image heroo-image-desktop"></div>
 
-                 <div class="hero-image hero-image-mobile"></div>
+                 <div class="heroo-image heroo-image-mobile"></div>
 
              </div>
          </div>
      </section>
-     
+     <br>
+     <br>
      <section class="nmtitle-section">
          <div class="hook-hr"></div>
          <div class="hook-text">High-African movie from director Kunle Afolayan.</div>
@@ -82,7 +432,7 @@
 <section class="nmtitle-section section-additional-videos">
 <div class="section-header">
 <h2 class="section-header-text section-item" data-uia="section-header-text">Videos</h2>
-<h2 class="section-subheader-text section-item" data-uia="section-subheader-text">Anikulapo</h2>
+<h2 class="section-subheader-text section-item" data-uia="section-subheader-text">The Devil</h2>
 </div>
 <div class="nm-content-horizontal-row">
 <ul class="nm-content-horizontal-row-item-container">
@@ -90,12 +440,13 @@
     <div class="additional-video-wrapper">
         <button class="additional-video">
             <span class="additional-video-image-wrapper">
-                <img src="{% static 'imagefolder/next/AAAABVdjTSAxYKfO4FQQI3m-o7lD1kMYCq3NxD-dGYZDEL4kUVYa5ui4oH-6yGd1AzffW7AEgtGp0eXeEvhL6tjyWbwPU-plOf7KGRfQV4YN34-4b_to0csy0h4BMA.jpg' %}" alt="" role="presentation" class="additional-video-image-preloader" loading="lazy">
+                <img src="{% static 'imagefolder/comedy/comedy (2).jpg' %}" alt="" role="presentation" class="additional-video-image-preloader" loading="lazy">
             
             </span>
             <style>
             .additional-video-image-wrapper{
-                background-image: url('{% static 'imagefolder/next/AAAABVdjTSAxYKfO4FQQI3m-o7lD1kMYCq3NxD-dGYZDEL4kUVYa5ui4oH-6yGd1AzffW7AEgtGp0eXeEvhL6tjyWbwPU-plOf7KGRfQV4YN34-4b_to0csy0h4BMA.jpg' %}')
+                background-image: url('{% static 'imagefolder/images/download (1).jpg' %}');
+                border: 4px solid white;
             }
 
             </style>
@@ -109,39 +460,40 @@
 </ul>
 </div>
 <div class="trailer">
-<video src="{% static 'imagefolder/videos/Anikulapo_Official_Trailer(144p).mp4' %}" width="100%" controls="true"></video>
+<video src="{% static 'imagefolder/videos/The_Devil_Wears.mp4' %}" width="100%" controls="true"></video>
 <img src="{% static 'imagefolder/icons/10117847.png' %}" class="close" onclick="toggle();">
 </div>
 </section>
 
 
 
-<section class="nmtitle-section" id="section-more-details">
+<section class="nmtitle-section" id="section-more-detailss">
 <div class="section-header">
-    <h2 class="section-header-text section-item">More Details</h2>
+    <h2 class="section-header-text section-item">More details</h2>
 </div>
-<div class="more-details-container">
-    <div class="more-details-cell cell-download">
-        <div class="more-details-label">Watch offline</div>
-        <div class="more-details-item-container">
-            <span class="more-details-item item-download" >Download and watch everywhere you go.</span>
-        </div></div><div class="more-details-cell cell-genres"><div class="more-details-label">Genres</div><div class="more-details-item-container"><span class="more-details-item item-genres"><a class="more-details-item item-genres" href="#">Nollywood</a>, </span><span class="more-details-item item-genres"></span><span class="more-details-item item-genres"><a class="more-details-item item-genres" href="#">Drama Movies</a>, </span><span class="more-details-item item-genres"><a class="more-details-item item-genres" href="#">African Movies</a></span></div></div><div class="more-details-cell cell-mood-tag"><div class="more-details-label">This movie is...</div><div class="more-details-item-container"><span class="more-details-item item-mood-tag">Understated<!-- --> </span></div></div><div class="more-details-cell cell-audio"><div class="more-details-label">Audio</div><div class="more-details-item-container"><span class="more-details-item item-audio">English, Yoruba - Audio Description<!-- -->, </span><span class="more-details-item item-audio">Yoruba [Original]</span></div></div><div class="more-details-cell cell-subtitle"><div class="more-details-label">Subtitles</div><div class="more-details-item-container"><span class="more-details-item item-subtitle">English</span></div></div><div class="more-details-cell cell-tudum">
+<div class="more-detailss-container">
+    <div class="more-detailss-cell cell-download">
+        <div class="more-detailss-label">Watch offline</div>
+        <div class="more-detailss-item-container">
+            <span class="more-detailss-item item-download" >Download and watch everywhere you go.</span>
+        </div></div><div class="more-detailss-cell cell-genres"><div class="more-detailss-label">Genres</div><div class="more-detailss-item-container"><span class="more-detailss-item item-genres"><a class="more-detailss-item item-genres" href="#">Nollywood</a>, </span><span class="more-detailss-item item-genres"></span><span class="more-detailss-item item-genres"><a class="more-detailss-item item-genres" href="#">Drama Movies</a>, </span><span class="more-detailss-item item-genres"><a class="more-detailss-item item-genres" href="#">African Movies</a></span></div></div><div class="more-detailss-cell cell-mood-tag"><div class="more-detailss-label">This movie is...</div><div class="more-detailss-item-container"><span class="more-detailss-item item-mood-tag">Understated<!-- --> </span></div></div><div class="more-detailss-cell cell-audio"><div class="more-detailss-label">Audio</div><div class="more-detailss-item-container"><span class="more-detailss-item item-audio">English, Yoruba - Audio Description<!-- -->, </span><span class="more-detailss-item item-audio">Yoruba [Original]</span></div></div><div class="more-detailss-cell cell-subtitle"><div class="more-detailss-label">Subtitles</div><div class="more-detailss-item-container"><span class="more-detailss-item item-subtitle">English</span></div></div><div class="more-detailss-cell cell-tudum">
 </div>
 </div>
 
-<div class="more-details-container-cast">
-<div class="more-details-cell cell-cast">
-<div class="more-details-label">Cast</div>
-<div class="more-details-item-container">
-    <span class="more-details-item item-cast">Kunle Remi</span>
-    <span class="more-details-item item-cast">Bimbo Ademoye</span>
-    <span class="more-details-item item-cast">Sola Sobowale</span>
-    <span class="more-details-item item-cast">Hakeem Kae-Kazim</span>
-</div>
+<div class="more-detailss-cell cell-cast">
+<div class="more-detailss-label">Cast</div>
+<div class="more-detailss-item-container">
+    <span class="more-detailss-item item-cast">Kunle Remi</span>
+    <span class="more-detailss-item item-cast">Bimbo Ademoye</span>
+    <span class="more-detailss-item item-cast">Sola Sobowale</span>
+    <span class="more-detailss-item item-cast">Hakeem Kae-Kazim</span>
 </div>
 </div>
 </section>
-                     
+            
+
+
+
 
 
 
@@ -155,42 +507,43 @@
          </div>
          
          <div class="link-container">
-             <a class="title-link" href="{% url 'endd' %}">
-                 <img class="title-link-img" data-uia="title-link-img" src="{% static 'imagefolder/africa/AAAABaG9BDblvgHuwShf1XSyKZfT2MsDMy78MG27eF-uZVdThXljOU01M5ThGq-kBqgnxEfaMt9Ss4nY0gLEKYTZiIK2UNV7UzHjq0k.jpg' %}" alt="Army of Thieves" loading="lazy">
-             </a>
-             <a class="title-link" href="{% url 'endd' %}" data-uia="title-link">
-                 <img class="title-link-img" data-uia="title-link-img" src="{% static 'imagefolder/africa/AAAABSydUg1kD7TG6PyfUY0xlV35U7PggZo3hU5eRD0eG1TBGQC5Ywy9tRVRtYAlvJ_wJrFHkZx5dqLlIosEcG1qLCzXwAeUQgpwSEM.jpg' %}" alt="The Man from Toronto" loading="lazy">
-             </a>
-             <a class="title-link" href="{% url 'endd' %}" data-uia="title-link">
-                 <img class="title-link-img" data-uia="title-link-img" src="{% static 'imagefolder/africa/AAAABb-mjcQr4c3Uiy2YhQz4XnmqgHNWrUdg1NhSDR60dzEQDY6m4CF5Y2pZUC3Zm_ASJ7gq1nDuJMTodJuPwgRiyxlYs3stts7JE6E.jpg' %}" loading="lazy">
-             </a>
-             <a class="title-link" href="{% url 'endd' %}" data-uia="title-link">
-                 <img class="title-link-img" data-uia="title-link-img" src="{% static 'imagefolder/africa/AAAABUVNlK1gGovkKUulg5mYLdjESuyXCF5IDOlG9o0sfpMjVbfhpg_ruf3o_UzG6vW_DHQ5h1W_fK3vuGPsmJOuoOHJinNukvQmp1c.jpg' %}" loading="lazy">
-             </a>
-             <a class="title-link" href="{% url 'endd' %}" data-uia="title-link">
-                 <img class="title-link-img" data-uia="title-link-img" src="{% static 'imagefolder/africa/AAAABVjYgz3QlzXJg9ec8JKgiQRElj6cBH6HdER2Dh62AlL-uU-nk-6XUBS5up_FXZpi6KTdi9_OWzFfYqTIuCkH06eRP8YuVwkeYPc.jpg' %}" alt="Me Time" loading="lazy">
-             </a>
-             <a class="title-link" href="{% url 'endd' %}" data-uia="title-link">
-                 <img class="title-link-img" data-uia="title-link-img" src="{% static 'imagefolder/africa/AAAABc-oQ52bnQ4tp1HPchNJeqKgr5zDeruvNQfBeCTBW-05XCmaylG80S-iszQBh3MOurxAP3opFLB4y43wq5cNUjAtb9n19BGnAOg.jpg' %}" alt="Sixty Minutes" loading="lazy">
-             </a>
-             <a class="title-link" href="{% url 'endd' %}" data-uia="title-link">
-                 <img class="title-link-img" data-uia="title-link-img" src="{% static 'imagefolder/africa/AAAABVMuOeffao2SMnMITMjPrN4F9o6Iv6kCoqTidYDk7AiZQ7jOxvOh1GRA19I-BzpeWRhHoy3DpRQFYN45D5AQi4AFsERksS9fhQo.jpg' %}" alt="Wingwomen" loading="lazy">
-             </a>
-             <a class="title-link" href="{% url 'endd' %}" data-uia="title-link">
-                 <img class="title-link-img" data-uia="title-link-img" src="{% static 'imagefolder/africa/AAAABf84V-GLeIvJCXXQ0uKdMmcHEaaRqwgSqKfMDKzQRw93Q3J-UWxLvd564aPfsJSGudLdowo12EQLOrWuPNf7Tk7PU2fTd-2mLlfN_SRq5_ElIXU_oTSmPYkmWDTIQsBl41nl.jpg' %}" alt="Wingwomen" loading="lazy">
-             </a>
-             <a class="title-link" href="{% url 'endd' %}" data-uia="title-link">
-                 <img class="title-link-img" data-uia="title-link-img" src="{% static 'imagefolder/africa/AAAABTpaCW3SgNIJBrjdEhArCClO4gnJ2wYHKHyZiufzv5gsuI1W-gPCbuUivjeEUqZ_sIIVpYza066oZdWHlgTMUVNgOtJXHUFAIZvJMg4LqRj80WsJmq8dIcRNFAPKQQaL1-ks.jpg' %}" alt="Ride Along 2" loading="lazy">
-             </a>
-             <a class="title-link" href="{% url 'endd' %}" data-uia="title-link">
-                 <img class="title-link-img" data-uia="title-link-img" src="{% static 'imagefolder/africa/AAAABelrz4ziWUTYGe5P181arHm4DbFApiTnGdWewPkYdNb6a4Yc2b5a5tcEYkG42NNwM5_RwFK0r_qCslyXExTePb6on51QbN3OFYI.jpg' %}" alt="Beverly Hills Cop: Axel F" loading="lazy">
-             </a>
-             <a class="title-link" href="{% url 'endd' %}" data-uia="title-link">
-                 <img class="title-link-img" data-uia="title-link-img" src="{% static 'imagefolder/africa/AAAABevU_O1vck8wGtaxtK6eG7BJMDbQub9jTt0iOmq6RL-1wH8nsu-VAOplDz2JKeL9mWrG27Cj3u2oPjGQoZfhKG41L7uq9X8tssNAZdg4XIP-90oYCeMlXOM7IOt9UlpMPbSN.jpg' %}" alt="The Equalizer 3" loading="lazy">
-             </a>
-             <a class="title-link" href="{% url 'endd' %}" >
-                 <img class="title-link-img" data-uia="title-link-img" src="{% static 'imagefolder/africa/AAAABVcmYPvysWqkvhKqNfk0yhubbCBWEF3zVC7kaNX13GZJUExhg10DVySZc5TzO_jo7-gJYJ7BJ7Df7UPi9nb5BqfhOXLtsM9LGRE.jpg' %}" alt="Anyone But You" loading="lazy">
-             </a>
+            <a class="title-link" href="{% url 'endd' %}" >
+                <img class="title-link-img" src="{% static 'imagefolder/africa/africa (1).jpg' %}">
+            </a>
+            <a class="title-link" href="{% url 'endd' %}" >
+                <img class="title-link-img" src="{% static 'imagefolder/africa/africa (6).jpg' %}">
+            </a>
+            <a class="title-link" href="{% url 'endd' %}" >
+                <img class="title-link-img" src="{% static 'imagefolder/africa/africa (8).jpg' %}">
+            </a>
+            <a class="title-link" href="{% url 'endd' %}" >
+                <img class="title-link-img" src="{% static 'imagefolder/africa/africa (3).jpg' %}">
+            </a>
+            <a class="title-link" href="{% url 'endd' %}" >
+                <img class="title-link-img" src="{% static 'imagefolder/africa/africa (4).jpg' %}">
+            </a>
+            <a class="title-link" href="{% url 'endd' %}" >
+                <img class="title-link-img" src="{% static 'imagefolder/africa/africa (18).jpg' %}">
+            </a>
+            <a class="title-link" href="{% url 'endd' %}" >
+                <img class="title-link-img" src="{% static 'imagefolder/africa/africa (9).jpg' %}">
+            </a>
+            <a class="title-link" href="{% url 'endd' %}" >
+                <img class="title-link-img" src="{% static 'imagefolder/africa/africa (10).jpg' %}">
+            </a>
+            <a class="title-link" href="{% url 'endd' %}" >
+                <img class="title-link-img" src="{% static 'imagefolder/africa/africa (11).jpg' %}">
+            </a>
+            <a class="title-link" href="{% url 'endd' %}" >
+                <img class="title-link-img" src="{% static 'imagefolder/africa/africa (12).jpg' %}">
+            </a>
+            <a class="title-link" href="{% url 'endd' %}" >
+                <img class="title-link-img" src="{% static 'imagefolder/africa/africa (13).jpg' %}">
+            </a>
+            <a class="title-link" href="{% url 'endd' %}" >
+                <img class="title-link-img" src="{% static 'imagefolder/africa/africa (15).jpg' %}">
+            </a>
+
          </div>
      </section>
  </div>

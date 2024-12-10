@@ -171,7 +171,7 @@
   font-weight: bold;
 }
 .returnCart a{
-  color:black;
+  color: white;
   font-size: 20px;
 }
 
@@ -184,7 +184,10 @@
   <div class="checkoutLayout">
     <div class="returnCart">
       <a href="/product_list">Keep Showping</a>
+      <br>
+      <br>
       <h1>List Product In Cart</h1>
+      <br>
       {% for cart in cart %}
       <div class="listt">
         <div class="item">
@@ -196,6 +199,7 @@
         <div class="Quantity">{{ cart.quantity}}</div>
         <div class="returnPrice">${{cart.Total_cost }}</div>
         </div>
+        <br>
         <br>
       </div>
       {% endfor %}

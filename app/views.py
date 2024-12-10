@@ -44,10 +44,6 @@ def backend(request):
 def upcoming(request):
    return render(request, 'app/upcoming.html')
 
-def talent(request):
-   return render(request, 'app/talent.html')
-
-
 def policy(request):
    return render(request, 'app/policy.html')
 

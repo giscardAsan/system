@@ -25,7 +25,6 @@ urlpatterns = [
      path('watch/', views.watch, name='watch'),
      path('backend/', views.backend, name="endd"),
      path('new/', views.new),
-     path('talent/', views.talent),
      path('policy/', views.policy),
      path('backend/', views.backend, name="endd"),
      path('about/', views.about),
