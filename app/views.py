@@ -65,7 +65,7 @@ def send_welcome_email(request):
         global inactive_user
         recepient_list = [inactive_user]
         send_mail(subject,massage,from_mail,recepient_list)
-        return redirect("main")
+        return redirect("login")
 
 
 # def register_user(request):
